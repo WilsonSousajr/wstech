@@ -23,16 +23,16 @@ export default function Contact() {
   };
 
   return (
-    <div>
+    <div className="pt-8">
       <h1 className="mb-8 text-3xl font-bold">{t('contact.title')}</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Card hover={false}>
+        <Card>
           <h2 className="mb-4 text-lg font-semibold">{t('contact.quickContact')}</h2>
-          <div className="flex items-center gap-3 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-3">
-            <span className="flex-1 text-sm text-zinc-300 truncate">{email}</span>
+          <div className="flex items-center gap-3 rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-4 py-3">
+            <span className="flex-1 text-sm text-neutral-400 truncate">{email}</span>
             <button
               onClick={copyEmail}
-              className="flex items-center gap-1 rounded bg-violet-600 px-3 py-1 text-xs font-medium text-white hover:bg-violet-500 transition-colors"
+              className="flex items-center gap-1 rounded-lg bg-white/10 px-3 py-1 text-xs font-medium text-white hover:bg-white/20 transition-colors cursor-pointer"
             >
               {copied ? (
                 <>
@@ -48,33 +48,33 @@ export default function Contact() {
             </button>
           </div>
         </Card>
-        <Card hover={false}>
+        <Card>
           <h2 className="mb-4 text-lg font-semibold">{t('contact.form.title')}</h2>
           {sent ? (
-            <p className="text-sm text-violet-400">{t('contact.form.success')}</p>
+            <p className="text-sm text-neutral-400">{t('contact.form.success')}</p>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <input
                 type="text"
                 placeholder={t('contact.form.name')}
                 required
-                className="rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-sm text-zinc-100 placeholder-zinc-500 focus:border-violet-600 focus:outline-none"
+                className="rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-4 py-2.5 text-sm text-white placeholder-neutral-600 focus:border-neutral-600 focus:outline-none"
               />
               <input
                 type="email"
                 placeholder={t('contact.form.email')}
                 required
-                className="rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-sm text-zinc-100 placeholder-zinc-500 focus:border-violet-600 focus:outline-none"
+                className="rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-4 py-2.5 text-sm text-white placeholder-neutral-600 focus:border-neutral-600 focus:outline-none"
               />
               <textarea
                 placeholder={t('contact.form.message')}
                 required
                 rows={4}
-                className="rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-sm text-zinc-100 placeholder-zinc-500 focus:border-violet-600 focus:outline-none resize-none"
+                className="rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-4 py-2.5 text-sm text-white placeholder-neutral-600 focus:border-neutral-600 focus:outline-none resize-none"
               />
               <button
                 type="submit"
-                className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium text-white hover:bg-violet-500 transition-colors"
+                className="rounded-xl bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition-colors cursor-pointer"
               >
                 {t('contact.form.send')}
               </button>

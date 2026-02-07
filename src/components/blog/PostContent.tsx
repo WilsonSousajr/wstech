@@ -7,7 +7,7 @@ interface PostContentProps {
 
 export default function PostContent({ content }: PostContentProps) {
   return (
-    <div className="prose prose-invert prose-a:text-violet-400 prose-headings:text-zinc-100 prose-code:text-violet-300 max-w-none">
+    <div className="prose prose-invert prose-a:text-neutral-300 prose-headings:text-white prose-code:text-neutral-300 prose-strong:text-white max-w-none">
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
     </div>
   );

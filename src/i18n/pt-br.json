@@ -7,16 +7,41 @@
     "blog": "Blog"
   },
   "home": {
-    "role": "Engenheiro de Software Backend",
+    "role": "Engenheiro Backend",
+    "bio": "Engenheiro de Software Backend apaixonado por construir sistemas distribuídos escaláveis e APIs de alta performance.",
     "location": "Brasília, Brasil",
-    "weather": "28°C, Ensolarado",
+    "weather": "Nuvens Dispersas",
     "newsletter": {
-      "title": "Newsletter",
-      "placeholder": "Digite seu email",
-      "button": "Inscrever-se",
+      "label": "Newsletter",
+      "title": "Fique atualizado",
+      "description": "Receba notificações sobre novos projetos e atualizações.",
+      "placeholder": "seu@email.com",
       "success": "Obrigado por se inscrever!"
     },
-    "github": "Atividade no GitHub"
+    "github": "Atividade no GitHub",
+    "activitiesIn": "atividades em"
+  },
+  "cards": {
+    "projects": {
+      "label": "Projetos",
+      "title": "Meu trabalho",
+      "description": "Explore meus projetos recentes"
+    },
+    "about": {
+      "label": "Sobre",
+      "title": "Saiba mais",
+      "description": "Conheça minha jornada e história"
+    },
+    "contact": {
+      "label": "Contato",
+      "title": "Entre em contato",
+      "description": "Vamos conversar"
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Leia artigos",
+      "description": "Insights e tutoriais de tecnologia"
+    }
   },
   "projects": {
     "title": "Projetos",

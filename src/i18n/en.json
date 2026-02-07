@@ -7,16 +7,41 @@
     "blog": "Blog"
   },
   "home": {
-    "role": "Backend Software Engineer",
+    "role": "Backend Engineer",
+    "bio": "Backend Software Engineer passionate about building scalable distributed systems and high-performance APIs.",
     "location": "Brasilia, Brazil",
-    "weather": "28°C, Sunny",
+    "weather": "Scattered Clouds",
     "newsletter": {
-      "title": "Newsletter",
-      "placeholder": "Enter your email",
-      "button": "Subscribe",
+      "label": "Newsletter",
+      "title": "Stay updated",
+      "description": "Get notified about new projects and updates.",
+      "placeholder": "your@email.com",
       "success": "Thanks for subscribing!"
     },
-    "github": "GitHub Activity"
+    "github": "GitHub Activity",
+    "activitiesIn": "activities in"
+  },
+  "cards": {
+    "projects": {
+      "label": "Projects",
+      "title": "My work",
+      "description": "Explore my recent projects"
+    },
+    "about": {
+      "label": "About",
+      "title": "Learn more",
+      "description": "Get to know my journey and story"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "Get in touch",
+      "description": "Let's talk"
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Read articles",
+      "description": "Tech insights and tutorials"
+    }
   },
   "projects": {
     "title": "Projects",

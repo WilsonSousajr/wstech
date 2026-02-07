@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Mail } from 'lucide-react';
+import { Bell, Send } from 'lucide-react';
 import Card from '../ui/Card';
 
 export default function NewsletterCard() {
@@ -17,27 +17,42 @@ export default function NewsletterCard() {
   };
 
   return (
-    <Card hover={false}>
-      <div className="flex items-center gap-2 mb-3">
-        <Mail size={18} className="text-violet-400" />
-        <h3 className="font-semibold">{t('home.newsletter.title')}</h3>
+    <Card className="flex h-full flex-col justify-between">
+      <div>
+        <Bell size={24} className="text-neutral-400" strokeWidth={1.5} />
+        <div className="mt-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
+            {t('home.newsletter.label')}
+          </p>
+          <h3 className="mt-1 text-lg font-semibold text-white">
+            {t('home.newsletter.title')}
+          </h3>
+          <p className="mt-0.5 text-sm text-neutral-500">
+            {subscribed ? t('home.newsletter.success') : t('home.newsletter.description')}
+          </p>
+        </div>
       </div>
-      <form onSubmit={handleSubmit} className="flex gap-2">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder={t('home.newsletter.placeholder')}
-          required
-          className="flex-1 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-sm text-zinc-100 placeholder-zinc-500 focus:border-violet-600 focus:outline-none"
-        />
-        <button
-          type="submit"
-          className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium text-white hover:bg-violet-500 transition-colors"
-        >
-          {subscribed ? t('home.newsletter.success') : t('home.newsletter.button')}
-        </button>
-      </form>
+
+      {!subscribed && (
+        <form onSubmit={handleSubmit} className="mt-5">
+          <div className="flex items-center rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] pl-4 pr-1 py-1">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t('home.newsletter.placeholder')}
+              required
+              className="flex-1 bg-transparent text-sm text-white placeholder-neutral-600 outline-none"
+            />
+            <button
+              type="submit"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-500 hover:text-white transition-colors cursor-pointer"
+            >
+              <Send size={14} />
+            </button>
+          </div>
+        </form>
+      )}
     </Card>
   );
 }
