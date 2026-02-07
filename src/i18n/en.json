@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "home": {
+    "role": "Backend Software Engineer",
+    "location": "Brasilia, Brazil",
+    "weather": "28°C, Sunny",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "success": "Thanks for subscribing!"
+    },
+    "github": "GitHub Activity"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of my work",
+    "viewProject": "View Project"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I'm Wilson Sousa, a Backend Software Engineer based in Brasilia, Brazil. I specialize in building scalable distributed systems, high-performance APIs, and data pipelines. My daily tools include Python, FastAPI, Django, and Go, backed by PostgreSQL and ClickHouse for data storage and analytics.\n\nBeyond backend development, I have hands-on experience with cloud infrastructure — managing deployments on AWS, VPS, and bare metal servers. I enjoy the full lifecycle: from designing system architecture to deploying and monitoring production workloads.\n\nWhen I'm not writing code, I'm exploring new technologies, contributing to open source, and sharing what I learn through my blog.",
+    "experience": "Experience",
+    "timeline": {
+      "job1": {
+        "role": "Senior Backend Engineer",
+        "company": "Company Z",
+        "period": "2023 - Present",
+        "description": "Leading backend architecture for distributed microservices platform."
+      },
+      "job2": {
+        "role": "Backend Developer",
+        "company": "Company Y",
+        "period": "2021 - 2023",
+        "description": "Built data pipelines and REST APIs serving millions of requests daily."
+      },
+      "job3": {
+        "role": "Junior Developer",
+        "company": "Company X",
+        "period": "2019 - 2021",
+        "description": "Developed internal tools and automated deployment workflows."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "quickContact": "Quick Contact",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "success": "Message sent! I'll get back to you soon."
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Read more",
+    "back": "Back to Blog"
+  }
+}

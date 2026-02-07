@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Início",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "blog": "Blog"
+  },
+  "home": {
+    "role": "Engenheiro de Software Backend",
+    "location": "Brasília, Brasil",
+    "weather": "28°C, Ensolarado",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Digite seu email",
+      "button": "Inscrever-se",
+      "success": "Obrigado por se inscrever!"
+    },
+    "github": "Atividade no GitHub"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Uma seleção do meu trabalho",
+    "viewProject": "Ver Projeto"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "bio": "Sou Wilson Sousa, Engenheiro de Software Backend baseado em Brasília, Brasil. Sou especializado em construir sistemas distribuídos escaláveis, APIs de alta performance e pipelines de dados. Minhas ferramentas diárias incluem Python, FastAPI, Django e Go, com PostgreSQL e ClickHouse para armazenamento e análise de dados.\n\nAlém do desenvolvimento backend, tenho experiência prática com infraestrutura em nuvem — gerenciando deploys em AWS, VPS e servidores bare metal. Gosto de todo o ciclo: desde o design da arquitetura até o deploy e monitoramento de cargas de trabalho em produção.\n\nQuando não estou escrevendo código, estou explorando novas tecnologias, contribuindo para open source e compartilhando o que aprendo no meu blog.",
+    "experience": "Experiência",
+    "timeline": {
+      "job1": {
+        "role": "Engenheiro Backend Sênior",
+        "company": "Empresa Z",
+        "period": "2023 - Presente",
+        "description": "Liderando arquitetura backend para plataforma de microsserviços distribuídos."
+      },
+      "job2": {
+        "role": "Desenvolvedor Backend",
+        "company": "Empresa Y",
+        "period": "2021 - 2023",
+        "description": "Construí pipelines de dados e APIs REST atendendo milhões de requisições diárias."
+      },
+      "job3": {
+        "role": "Desenvolvedor Júnior",
+        "company": "Empresa X",
+        "period": "2019 - 2021",
+        "description": "Desenvolvi ferramentas internas e automatizei fluxos de deploy."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contato",
+    "quickContact": "Contato Rápido",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "form": {
+      "title": "Enviar Mensagem",
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar Mensagem",
+      "success": "Mensagem enviada! Retornarei em breve."
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Leia mais",
+    "back": "Voltar ao Blog"
+  }
+}
