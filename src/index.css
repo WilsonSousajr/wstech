@@ -1,2 +1,30 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@media (max-width: 768px) {
+  .grid[style] {
+    grid-template-areas:
+      "profile"
+      "info"
+      "projects"
+      "about"
+      "blog"
+      "contact"
+      "heatmap"
+      "newsletter" !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid[style] {
+    grid-template-areas:
+      "profile info"
+      "profile projects"
+      "about blog"
+      "contact contact"
+      "heatmap heatmap"
+      "newsletter newsletter" !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
