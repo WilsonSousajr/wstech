@@ -1,5 +1,5 @@
 import { Buffer } from 'buffer';
-globalThis.Buffer = Buffer;
+(globalThis as Record<string, unknown>).Buffer = Buffer;
 
 import './i18n';
 import { StrictMode } from 'react'
