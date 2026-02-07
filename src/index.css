@@ -2,7 +2,6 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-outfit: 'Outfit', sans-serif;
   --color-card: #141414;
   --color-card-border: #232323;
   --color-card-hover: #1a1a1a;
