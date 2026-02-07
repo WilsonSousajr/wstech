@@ -53,6 +53,10 @@ src/
   pages/         — Home, Projects, About, Contact, Blog, BlogPost
 ```
 
+## Workflow Rules
+
+- **Always delete plan files after completing plans** — remove files from `docs/plans/` once implementation is done. Do not leave stale plans in the repo.
+
 ## Important Notes
 
 - Tailwind CSS v4 requires `@tailwindcss/vite` in vite.config.ts (not PostCSS config)
