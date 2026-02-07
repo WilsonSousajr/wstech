@@ -16,24 +16,23 @@ body {
   background-color: #0a0a0a;
 }
 
-/* Bento grid responsive */
-@media (max-width: 768px) {
-  .bento-grid {
-    grid-template-areas:
-      "profile"
-      "info"
-      "projects"
-      "about"
-      "contact"
-      "blog"
-      "newsletter"
-      "github" !important;
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto !important;
-  }
+/* ─── Bento grid — mobile-first ─── */
+.bento-grid {
+  grid-template-areas:
+    "profile"
+    "info"
+    "projects"
+    "about"
+    "contact"
+    "blog"
+    "newsletter"
+    "github";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Tablet: 2 columns */
+@media (min-width: 640px) {
   .bento-grid {
     grid-template-areas:
       "profile profile"
@@ -41,13 +40,24 @@ body {
       "projects about"
       "contact blog"
       "newsletter newsletter"
-      "github github" !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: auto !important;
+      "github github";
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* Staggered fade-in */
+/* Desktop: 4 columns */
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-areas:
+      "profile profile profile info"
+      "projects projects about about"
+      "contact blog newsletter newsletter"
+      "github github github github";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* ─── Staggered fade-in ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -58,7 +68,26 @@ body {
   animation: fadeUp 0.5s ease-out forwards;
 }
 
-/* Scrollbar */
+/* ─── GitHub heatmap horizontal scroll on small screens ─── */
+.heatmap-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.heatmap-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.heatmap-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.heatmap-scroll::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+
+/* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 6px;
 }

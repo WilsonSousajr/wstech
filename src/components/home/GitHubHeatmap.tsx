@@ -97,7 +97,7 @@ export default function GitHubHeatmap() {
       </div>
 
       {/* Heatmap */}
-      <div className="mt-4 flex-1 overflow-x-auto">
+      <div className="mt-4 flex-1 heatmap-scroll">
         {loading ? (
           <div className="flex h-24 items-center justify-center">
             <span className="text-xs text-neutral-600">Loading...</span>

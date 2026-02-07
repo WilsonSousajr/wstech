@@ -23,13 +23,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-8">
-      <h1 className="mb-8 text-3xl font-bold">{t('contact.title')}</h1>
+    <div className="pt-10 sm:pt-8">
+      <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{t('contact.title')}</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card>
           <h2 className="mb-4 text-lg font-semibold">{t('contact.quickContact')}</h2>
-          <div className="flex items-center gap-3 rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-4 py-3">
-            <span className="flex-1 text-sm text-neutral-400 truncate">{email}</span>
+          <div className="flex items-center gap-2 sm:gap-3 rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-3 sm:px-4 py-3">
+            <span className="flex-1 min-w-0 text-xs sm:text-sm text-neutral-400 truncate">{email}</span>
             <button
               onClick={copyEmail}
               className="flex items-center gap-1 rounded-lg bg-white/10 px-3 py-1 text-xs font-medium text-white hover:bg-white/20 transition-colors cursor-pointer"

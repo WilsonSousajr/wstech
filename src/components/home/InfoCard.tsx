@@ -46,14 +46,14 @@ export default function InfoCard() {
 
         {/* Temperature */}
         <div className="mt-4">
-          <span className="text-5xl font-light tracking-tight text-white">28</span>
+          <span className="text-4xl sm:text-5xl font-light tracking-tight text-white">28</span>
           <span className="ml-1 text-lg text-neutral-500">°C</span>
         </div>
         <p className="mt-1 text-sm text-neutral-500">{t('home.weather')}</p>
       </div>
 
       {/* Forecast */}
-      <div className="mt-6 flex justify-between gap-2">
+      <div className="mt-4 sm:mt-6 grid grid-cols-6 gap-2">
         {forecast.map((day) => (
           <div key={day.day} className="flex flex-col items-center gap-1">
             <span className="text-[10px] font-medium tracking-wider text-neutral-600">{day.day}</span>

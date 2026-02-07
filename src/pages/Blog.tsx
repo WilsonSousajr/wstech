@@ -41,8 +41,8 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="pt-8">
-      <h1 className="mb-8 text-3xl font-bold">{t('blog.title')}</h1>
+    <div className="pt-10 sm:pt-8">
+      <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{t('blog.title')}</h1>
       <div className="grid gap-4">
         {posts.map((post) => (
           <PostCard key={post.slug} {...post} />

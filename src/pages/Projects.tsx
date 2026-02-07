@@ -8,9 +8,9 @@ export default function Projects() {
   const isPtBr = i18n.language === 'pt-BR';
 
   return (
-    <div className="pt-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">{t('projects.title')}</h1>
+    <div className="pt-10 sm:pt-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold">{t('projects.title')}</h1>
         <p className="mt-2 text-neutral-500">{t('projects.subtitle')}</p>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

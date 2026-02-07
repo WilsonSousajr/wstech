@@ -42,7 +42,7 @@ export default function NewsletterCard() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t('home.newsletter.placeholder')}
               required
-              className="flex-1 bg-transparent text-sm text-white placeholder-neutral-600 outline-none"
+              className="flex-1 min-w-0 bg-transparent text-sm text-white placeholder-neutral-600 outline-none"
             />
             <button
               type="submit"

@@ -57,8 +57,15 @@ src/
 
 - **Always delete plan files after completing plans** — remove files from `docs/plans/` once implementation is done. Do not leave stale plans in the repo.
 
+## Responsive Design
+
+- **Mobile-first** CSS Grid in `src/index.css` — base is 1-column, `sm` (640px) is 2-column, `lg` (1024px) is 4-column
+- Grid cell wrappers in `Home.tsx` must have `min-w-0` to prevent content from overflowing grid boundaries
+- Card component uses `p-4 sm:p-6` for tighter mobile padding and `overflow-hidden` + `min-w-0`
+- Layout root has `overflow-x-hidden` as a safety net against horizontal scroll
+- GitHub heatmap uses `.heatmap-scroll` class for horizontal scrolling with styled scrollbar on small screens
+
 ## Important Notes
 
 - Tailwind CSS v4 requires `@tailwindcss/vite` in vite.config.ts (not PostCSS config)
 - `globalThis.Buffer` assignment uses `(globalThis as Record<string, unknown>)` cast to avoid TS7017
-- Responsive bento grid breakpoints are in `src/index.css` using `!important` overrides on grid-template-areas

@@ -14,9 +14,9 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
       {/* Floating language toggle */}
-      <div className="fixed top-5 right-6 z-50 flex items-center gap-1">
+      <div className="fixed top-4 right-4 sm:top-5 sm:right-6 z-50 flex items-center gap-1">
         <button
           onClick={toggleLanguage}
           className="text-xs tracking-widest uppercase text-neutral-500 hover:text-white transition-colors cursor-pointer"
@@ -29,7 +29,7 @@ export default function Layout() {
 
       {/* Back button for inner pages */}
       {!isHome && (
-        <div className="fixed top-5 left-6 z-50">
+        <div className="fixed top-4 left-4 sm:top-5 sm:left-6 z-50">
           <Link
             to="/"
             className="flex items-center gap-2 text-sm text-neutral-500 hover:text-white transition-colors"
@@ -40,7 +40,7 @@ export default function Layout() {
         </div>
       )}
 
-      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
+      <main className="mx-auto max-w-6xl px-3 py-6 sm:px-6 sm:py-12">
         <Outlet />
       </main>
     </div>

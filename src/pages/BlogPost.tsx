@@ -44,7 +44,7 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="pt-8">
+    <div className="pt-10 sm:pt-8">
       <Card>
         <div className="mb-6">
           <div className="flex flex-wrap gap-2 mb-3">
@@ -57,7 +57,7 @@ export default function BlogPost() {
               </span>
             ))}
           </div>
-          <h1 className="text-3xl font-bold text-white mb-1">{post.title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">{post.title}</h1>
           <p className="text-sm text-neutral-600">{post.date}</p>
         </div>
         <PostContent content={post.content} />

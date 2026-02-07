@@ -7,8 +7,8 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <div className="pt-8">
-      <h1 className="mb-8 text-3xl font-bold">{t('about.title')}</h1>
+    <div className="pt-10 sm:pt-8">
+      <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{t('about.title')}</h1>
       <div className="grid gap-4">
         <Card>
           <p className="text-neutral-400 leading-relaxed whitespace-pre-line">
