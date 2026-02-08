@@ -15,4 +15,12 @@ i18n.use(initReactI18next).init({
   interpolation: { escapeValue: false },
 });
 
+// Keep <html lang> in sync with the current language
+const updateHtmlLang = (lang: string) => {
+  document.documentElement.lang = lang === 'pt-BR' ? 'pt-BR' : 'en';
+};
+
+updateHtmlLang(savedLang);
+i18n.on('languageChanged', updateHtmlLang);
+
 export default i18n;

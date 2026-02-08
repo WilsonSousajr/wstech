@@ -26,6 +26,8 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 - **GitHub heatmap** fetches real data from `github-contributions-api.jogruber.de` with mock fallback
 - **Contact form** uses EmailJS `sendForm` with form ref — input `name` attrs (`from_name`, `from_email`, `message`) map directly to EmailJS template variables. Requires `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY` in `.env`
 - **Newsletter** uses Buttondown's public embed-subscribe endpoint via `fetch` POST (no API key required). Requires `VITE_BUTTONDOWN_USERNAME` in `.env`
+- **Route-based code splitting** — all pages except Home use `React.lazy()` + `Suspense` in App.tsx. Home is eagerly loaded as the landing page. This keeps the main bundle under 500KB.
+- **`<html lang>` syncs automatically** via `i18n.on('languageChanged')` in `src/i18n/index.ts` — no need to manage it in React components
 
 ## Design System
 
@@ -48,13 +50,13 @@ src/
   components/
     blog/        — PostCard, PostContent
     home/        — ProfileCard, InfoCard, NavCard, NewsletterCard, GitHubHeatmap
-    layout/      — Layout (with floating lang toggle + back button)
+    layout/      — Layout (with floating lang toggle, theme toggle + back button)
     ui/          — Card (reusable)
   content/
     posts/       — Markdown blog posts with frontmatter
   data/          — projects.ts (sample project data)
   i18n/          — en.json, pt-br.json, index.ts
-  pages/         — Home, Projects, About, Contact, Blog, BlogPost
+  pages/         — Home, Projects, About, Contact, Blog, BlogPost, NotFound
 ```
 
 ## Workflow Rules
@@ -79,3 +81,6 @@ src/
 
 - Tailwind CSS v4 requires `@tailwindcss/vite` in vite.config.ts (not PostCSS config)
 - `globalThis.Buffer` assignment uses `(globalThis as Record<string, unknown>)` cast to avoid TS7017
+- **All user-visible strings must use `t()` from react-i18next** — never hardcode English text in components (includes aria-labels, loading states, legend labels)
+- Icon-only buttons/links must always have `aria-label` with a translated string
+- All external `<a>` tags must use `target="_blank" rel="noopener noreferrer"`

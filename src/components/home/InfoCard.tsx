@@ -3,34 +3,29 @@ import { useTranslation } from 'react-i18next';
 import { MapPin } from 'lucide-react';
 import Card from '../ui/Card';
 
-const forecast = [
-  { day: 'SAT', temp: 28 },
-  { day: 'SUN', temp: 21 },
-  { day: 'MON', temp: 18 },
-  { day: 'TUE', temp: 20 },
-  { day: 'WED', temp: 19 },
-  { day: 'THU', temp: 21 },
-];
+const forecastKeys = ['sat', 'sun', 'mon', 'tue', 'wed', 'thu'] as const;
+const forecastTemps = [28, 21, 18, 20, 19, 21];
 
 export default function InfoCard() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [time, setTime] = useState('');
 
   useEffect(() => {
+    const locale = i18n.language === 'pt-BR' ? 'pt-BR' : 'en-US';
     const update = () => {
       setTime(
-        new Intl.DateTimeFormat('en-US', {
+        new Intl.DateTimeFormat(locale, {
           hour: '2-digit',
           minute: '2-digit',
           timeZone: 'America/Sao_Paulo',
-          hour12: true,
+          hour12: locale === 'en-US',
         }).format(new Date())
       );
     };
     update();
     const id = setInterval(update, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [i18n.language]);
 
   return (
     <Card className="flex h-full flex-col justify-between">
@@ -54,10 +49,10 @@ export default function InfoCard() {
 
       {/* Forecast */}
       <div className="mt-4 sm:mt-6 grid grid-cols-6 gap-2">
-        {forecast.map((day) => (
-          <div key={day.day} className="flex flex-col items-center gap-1">
-            <span className="text-[10px] font-medium tracking-wider text-text-faint">{day.day}</span>
-            <span className="text-sm text-text-secondary">{day.temp}°</span>
+        {forecastKeys.map((key, i) => (
+          <div key={key} className="flex flex-col items-center gap-1">
+            <span className="text-[10px] font-medium tracking-wider text-text-faint">{t(`home.forecast.${key}`)}</span>
+            <span className="text-sm text-text-secondary">{forecastTemps[i]}°</span>
           </div>
         ))}
       </div>

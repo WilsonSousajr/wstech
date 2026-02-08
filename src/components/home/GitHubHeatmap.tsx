@@ -97,6 +97,7 @@ export default function GitHubHeatmap() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-text-faint hover:text-text-primary transition-colors"
+          aria-label={t('home.githubProfile')}
         >
           <ExternalLink size={14} />
         </a>
@@ -106,7 +107,7 @@ export default function GitHubHeatmap() {
       <div className="mt-4 flex-1 heatmap-scroll">
         {loading ? (
           <div className="flex h-24 items-center justify-center">
-            <span className="text-xs text-text-faint">Loading...</span>
+            <span className="text-xs text-text-faint">{t('common.loading')}</span>
           </div>
         ) : (
           <div className="flex gap-[3px]">
@@ -141,7 +142,7 @@ export default function GitHubHeatmap() {
           {total} {t('home.activitiesIn')} {year}
         </span>
         <div className="flex items-center gap-1.5">
-          <span className="text-[10px] text-text-faint">Less</span>
+          <span className="text-[10px] text-text-faint">{t('home.heatmap.less')}</span>
           {LEGEND_VARS.map((color, i) => (
             <div
               key={i}
@@ -149,7 +150,7 @@ export default function GitHubHeatmap() {
               style={{ backgroundColor: color }}
             />
           ))}
-          <span className="text-[10px] text-text-faint">More</span>
+          <span className="text-[10px] text-text-faint">{t('home.heatmap.more')}</span>
         </div>
       </div>
     </Card>

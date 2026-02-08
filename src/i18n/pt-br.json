@@ -4,7 +4,12 @@
     "projects": "Projetos",
     "about": "Sobre",
     "contact": "Contato",
-    "blog": "Blog"
+    "blog": "Blog",
+    "back": "Voltar",
+    "switchLanguage": "Trocar idioma"
+  },
+  "common": {
+    "loading": "Carregando..."
   },
   "home": {
     "role": "Engenheiro Backend",
@@ -17,10 +22,24 @@
       "description": "Receba notificações sobre novos projetos e atualizações.",
       "placeholder": "seu@email.com",
       "success": "Obrigado por se inscrever!",
-      "error": "Algo deu errado. Por favor, tente novamente."
+      "error": "Algo deu errado. Por favor, tente novamente.",
+      "subscribe": "Inscrever-se"
     },
     "github": "Atividade no GitHub",
-    "activitiesIn": "atividades em"
+    "githubProfile": "Ver perfil no GitHub",
+    "activitiesIn": "atividades em",
+    "heatmap": {
+      "less": "Menos",
+      "more": "Mais"
+    },
+    "forecast": {
+      "sat": "SÁB",
+      "sun": "DOM",
+      "mon": "SEG",
+      "tue": "TER",
+      "wed": "QUA",
+      "thu": "QUI"
+    }
   },
   "cards": {
     "projects": {
@@ -104,6 +123,12 @@
   "blog": {
     "title": "Blog",
     "readMore": "Leia mais",
-    "back": "Voltar ao Blog"
+    "back": "Voltar ao Blog",
+    "notFound": "Post não encontrado"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe ou foi movida.",
+    "backHome": "Voltar ao Início"
   }
 }

@@ -79,6 +79,7 @@ export default function NewsletterCard() {
               type="submit"
               disabled={loading}
               className="flex h-8 w-8 items-center justify-center rounded-lg text-text-muted hover:text-text-primary transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label={t('home.newsletter.subscribe')}
             >
               {loading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
             </button>

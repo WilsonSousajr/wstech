@@ -35,9 +35,13 @@ export default function Contact() {
   }, [cooldown]);
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback: select the email text for manual copy
+    }
   };
 
   const validate = useCallback((): FormErrors => {
@@ -74,13 +78,15 @@ export default function Contact() {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
 
+    if (!formRef.current) return;
+
     setStatus('sending');
 
     try {
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current!,
+        formRef.current,
         { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
       );
       setStatus('success');

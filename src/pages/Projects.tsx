@@ -40,6 +40,8 @@ export default function Projects() {
             </p>
             <a
               href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sm text-text-secondary hover:text-text-primary transition-colors"
             >
               {t('projects.viewProject')}

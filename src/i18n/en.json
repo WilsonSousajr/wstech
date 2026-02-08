@@ -4,7 +4,12 @@
     "projects": "Projects",
     "about": "About",
     "contact": "Contact",
-    "blog": "Blog"
+    "blog": "Blog",
+    "back": "Back",
+    "switchLanguage": "Switch language"
+  },
+  "common": {
+    "loading": "Loading..."
   },
   "home": {
     "role": "Backend Engineer",
@@ -17,10 +22,24 @@
       "description": "Get notified about new projects and updates.",
       "placeholder": "your@email.com",
       "success": "Thanks for subscribing!",
-      "error": "Something went wrong. Please try again."
+      "error": "Something went wrong. Please try again.",
+      "subscribe": "Subscribe"
     },
     "github": "GitHub Activity",
-    "activitiesIn": "activities in"
+    "githubProfile": "View GitHub profile",
+    "activitiesIn": "activities in",
+    "heatmap": {
+      "less": "Less",
+      "more": "More"
+    },
+    "forecast": {
+      "sat": "SAT",
+      "sun": "SUN",
+      "mon": "MON",
+      "tue": "TUE",
+      "wed": "WED",
+      "thu": "THU"
+    }
   },
   "cards": {
     "projects": {
@@ -104,6 +123,12 @@
   "blog": {
     "title": "Blog",
     "readMore": "Read more",
-    "back": "Back to Blog"
+    "back": "Back to Blog",
+    "notFound": "Post not found"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
   }
 }

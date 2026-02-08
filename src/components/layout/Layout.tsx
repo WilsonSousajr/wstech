@@ -4,7 +4,7 @@ import { ArrowLeft, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 
 export default function Layout() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const isHome = location.pathname === '/';
   const { theme, toggleTheme } = useTheme();
@@ -29,6 +29,7 @@ export default function Layout() {
         <button
           onClick={toggleLanguage}
           className="text-xs tracking-widest uppercase text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+          aria-label={t('nav.switchLanguage')}
         >
           {i18n.language === 'en' ? 'PT' : 'EN'}{' '}
           <span className="text-text-faint">/</span>{' '}
@@ -44,7 +45,7 @@ export default function Layout() {
             className="flex items-center gap-2 text-sm text-text-muted hover:text-text-primary transition-colors"
           >
             <ArrowLeft size={16} />
-            <span>Back</span>
+            <span>{t('nav.back')}</span>
           </Link>
         </div>
       )}

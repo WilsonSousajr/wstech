@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import matter from 'gray-matter';
 import Card from '../components/ui/Card';
 import PostContent from '../components/blog/PostContent';
@@ -18,7 +19,9 @@ interface PostData {
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = useTranslation();
   const [post, setPost] = useState<PostData | null>(null);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     async function loadPost() {
@@ -35,12 +38,34 @@ export default function BlogPost() {
           return;
         }
       }
+      setNotFound(true);
     }
     loadPost();
   }, [slug]);
 
+  if (notFound) {
+    return (
+      <div className="pt-10 sm:pt-8 flex items-center justify-center min-h-[40vh]">
+        <Card>
+          <div className="text-center py-8 px-4">
+            <p className="text-4xl font-light text-text-muted mb-4">404</p>
+            <h1 className="text-lg font-semibold text-text-primary mb-2">
+              {t('blog.notFound')}
+            </h1>
+            <Link
+              to="/blog"
+              className="inline-block mt-4 rounded-xl bg-btn-bg px-6 py-2.5 text-sm font-medium text-text-primary hover:bg-btn-bg-hover transition-colors"
+            >
+              {t('blog.back')}
+            </Link>
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
   if (!post) {
-    return <div className="text-text-faint pt-8">Loading...</div>;
+    return <div className="text-text-faint pt-8">{t('common.loading')}</div>;
   }
 
   return (
