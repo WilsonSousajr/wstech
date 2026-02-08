@@ -1,11 +1,13 @@
 import { Outlet, useLocation, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export default function Layout() {
   const { i18n } = useTranslation();
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const { theme, toggleTheme } = useTheme();
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'pt-BR' : 'en';
@@ -14,16 +16,23 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
-      {/* Floating language toggle */}
-      <div className="fixed top-4 right-4 sm:top-5 sm:right-6 z-50 flex items-center gap-1">
+    <div className="min-h-screen bg-bg text-text-primary overflow-x-hidden">
+      {/* Floating top-right controls */}
+      <div className="fixed top-4 right-4 sm:top-5 sm:right-6 z-50 flex items-center gap-2">
+        <button
+          onClick={toggleTheme}
+          className="text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+          aria-label="Toggle theme"
+        >
+          {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+        </button>
         <button
           onClick={toggleLanguage}
-          className="text-xs tracking-widest uppercase text-neutral-500 hover:text-white transition-colors cursor-pointer"
+          className="text-xs tracking-widest uppercase text-text-muted hover:text-text-primary transition-colors cursor-pointer"
         >
           {i18n.language === 'en' ? 'PT' : 'EN'}{' '}
-          <span className="text-neutral-600">/</span>{' '}
-          <span className="text-white">{i18n.language === 'en' ? 'EN' : 'PT'}</span>
+          <span className="text-text-faint">/</span>{' '}
+          <span className="text-text-primary">{i18n.language === 'en' ? 'EN' : 'PT'}</span>
         </button>
       </div>
 
@@ -32,7 +41,7 @@ export default function Layout() {
         <div className="fixed top-4 left-4 sm:top-5 sm:left-6 z-50">
           <Link
             to="/"
-            className="flex items-center gap-2 text-sm text-neutral-500 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-sm text-text-muted hover:text-text-primary transition-colors"
           >
             <ArrowLeft size={16} />
             <span>Back</span>

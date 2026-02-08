@@ -19,18 +19,18 @@ export default function PostCard({ slug, title, date, description, tags }: PostC
         {tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-[#2a2a2a] px-2 py-0.5 text-xs text-neutral-500"
+            className="rounded-full border border-border-hover px-2 py-0.5 text-xs text-text-muted"
           >
             {tag}
           </span>
         ))}
       </div>
-      <h2 className="text-lg font-semibold text-white mb-1">{title}</h2>
-      <p className="text-xs text-neutral-600 mb-2">{date}</p>
-      <p className="text-sm text-neutral-500 mb-3">{description}</p>
+      <h2 className="text-lg font-semibold text-text-primary mb-1">{title}</h2>
+      <p className="text-xs text-text-faint mb-2">{date}</p>
+      <p className="text-sm text-text-muted mb-3">{description}</p>
       <Link
         to={`/blog/${slug}`}
-        className="text-sm text-neutral-400 hover:text-white transition-colors"
+        className="text-sm text-text-secondary hover:text-text-primary transition-colors"
       >
         {t('blog.readMore')} →
       </Link>

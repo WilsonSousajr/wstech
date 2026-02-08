@@ -11,7 +11,7 @@ export default function Projects() {
     <div className="pt-10 sm:pt-8">
       <div className="mb-6 sm:mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold">{t('projects.title')}</h1>
-        <p className="mt-2 text-neutral-500">{t('projects.subtitle')}</p>
+        <p className="mt-2 text-text-muted">{t('projects.subtitle')}</p>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {projects.map((project) => (
@@ -28,19 +28,19 @@ export default function Projects() {
               <div className={`mb-4 h-32 rounded-lg ${project.color} opacity-60`} />
             )}
             <div className="flex items-center gap-2 mb-2">
-              <h2 className="text-lg font-semibold text-white">
+              <h2 className="text-lg font-semibold text-text-primary">
                 {isPtBr ? project.titlePtBr : project.title}
               </h2>
-              <span className="rounded-full border border-[#2a2a2a] px-2 py-0.5 text-xs text-neutral-500">
+              <span className="rounded-full border border-border-hover px-2 py-0.5 text-xs text-text-muted">
                 {project.year}
               </span>
             </div>
-            <p className="text-sm text-neutral-500 mb-3">
+            <p className="text-sm text-text-muted mb-3">
               {isPtBr ? project.descriptionPtBr : project.description}
             </p>
             <a
               href={project.link}
-              className="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 text-sm text-text-secondary hover:text-text-primary transition-colors"
             >
               {t('projects.viewProject')}
               <ExternalLink size={14} />

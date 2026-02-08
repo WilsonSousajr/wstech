@@ -40,7 +40,7 @@ export default function BlogPost() {
   }, [slug]);
 
   if (!post) {
-    return <div className="text-neutral-600 pt-8">Loading...</div>;
+    return <div className="text-text-faint pt-8">Loading...</div>;
   }
 
   return (
@@ -51,14 +51,14 @@ export default function BlogPost() {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-[#2a2a2a] px-2 py-0.5 text-xs text-neutral-500"
+                className="rounded-full border border-border-hover px-2 py-0.5 text-xs text-text-muted"
               >
                 {tag}
               </span>
             ))}
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">{post.title}</h1>
-          <p className="text-sm text-neutral-600">{post.date}</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mb-1">{post.title}</h1>
+          <p className="text-sm text-text-faint">{post.date}</p>
         </div>
         <PostContent content={post.content} />
       </Card>

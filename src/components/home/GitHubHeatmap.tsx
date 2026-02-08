@@ -14,15 +14,21 @@ interface ContributionsData {
   contributions: ContributionDay[];
 }
 
-const INTENSITY_COLORS = [
-  '#161616',
-  '#2a2a2a',
-  '#4a4a4a',
-  '#7a7a7a',
-  '#b0b0b0',
+const INTENSITY_VARS = [
+  'var(--color-heatmap-0)',
+  'var(--color-heatmap-1)',
+  'var(--color-heatmap-2)',
+  'var(--color-heatmap-3)',
+  'var(--color-heatmap-4)',
 ];
 
-const LEGEND_COLORS = ['#2a2a2a', '#4a4a4a', '#6a6a6a', '#9a9a9a', '#d0d0d0'];
+const LEGEND_VARS = [
+  'var(--color-heatmap-legend-0)',
+  'var(--color-heatmap-legend-1)',
+  'var(--color-heatmap-legend-2)',
+  'var(--color-heatmap-legend-3)',
+  'var(--color-heatmap-legend-4)',
+];
 
 export default function GitHubHeatmap() {
   const { t } = useTranslation();
@@ -81,8 +87,8 @@ export default function GitHubHeatmap() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Github size={16} className="text-neutral-400" />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
+          <Github size={16} className="text-text-secondary" />
+          <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">
             {t('home.github')} • {year}
           </span>
         </div>
@@ -90,7 +96,7 @@ export default function GitHubHeatmap() {
           href="https://github.com/WilsonSousajr"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-600 hover:text-white transition-colors"
+          className="text-text-faint hover:text-text-primary transition-colors"
         >
           <ExternalLink size={14} />
         </a>
@@ -100,7 +106,7 @@ export default function GitHubHeatmap() {
       <div className="mt-4 flex-1 heatmap-scroll">
         {loading ? (
           <div className="flex h-24 items-center justify-center">
-            <span className="text-xs text-neutral-600">Loading...</span>
+            <span className="text-xs text-text-faint">Loading...</span>
           </div>
         ) : (
           <div className="flex gap-[3px]">
@@ -110,7 +116,7 @@ export default function GitHubHeatmap() {
                   <div
                     key={`${wi}-${di}`}
                     className="h-[10px] w-[10px] rounded-full"
-                    style={{ backgroundColor: INTENSITY_COLORS[day.level] }}
+                    style={{ backgroundColor: INTENSITY_VARS[day.level] }}
                     title={`${day.date}: ${day.count} contributions`}
                   />
                 ))}
@@ -120,7 +126,7 @@ export default function GitHubHeatmap() {
                     <div
                       key={`pad-${wi}-${pi}`}
                       className="h-[10px] w-[10px] rounded-full"
-                      style={{ backgroundColor: INTENSITY_COLORS[0] }}
+                      style={{ backgroundColor: INTENSITY_VARS[0] }}
                     />
                   ))}
               </div>
@@ -131,19 +137,19 @@ export default function GitHubHeatmap() {
 
       {/* Footer */}
       <div className="mt-4 flex items-center justify-between">
-        <span className="text-xs text-neutral-500">
+        <span className="text-xs text-text-muted">
           {total} {t('home.activitiesIn')} {year}
         </span>
         <div className="flex items-center gap-1.5">
-          <span className="text-[10px] text-neutral-600">Less</span>
-          {LEGEND_COLORS.map((color, i) => (
+          <span className="text-[10px] text-text-faint">Less</span>
+          {LEGEND_VARS.map((color, i) => (
             <div
               key={i}
               className="h-[10px] w-[10px] rounded-full"
               style={{ backgroundColor: color }}
             />
           ))}
-          <span className="text-[10px] text-neutral-600">More</span>
+          <span className="text-[10px] text-text-faint">More</span>
         </div>
       </div>
     </Card>

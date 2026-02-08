@@ -95,7 +95,7 @@ export default function Contact() {
   const isSendDisabled = status === 'sending' || cooldown > 0;
 
   const inputClass =
-    'rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-4 py-2.5 text-sm text-white placeholder-neutral-600 focus:border-neutral-600 focus:outline-none disabled:opacity-50';
+    'rounded-xl border border-border-hover bg-input px-4 py-2.5 text-sm text-text-primary placeholder-text-faint focus:border-text-muted focus:outline-none disabled:opacity-50';
 
   return (
     <div className="pt-10 sm:pt-8">
@@ -103,11 +103,11 @@ export default function Contact() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card>
           <h2 className="mb-4 text-lg font-semibold">{t('contact.quickContact')}</h2>
-          <div className="flex items-center gap-2 sm:gap-3 rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] px-3 sm:px-4 py-3">
-            <span className="flex-1 min-w-0 text-xs sm:text-sm text-neutral-400 truncate">{email}</span>
+          <div className="flex items-center gap-2 sm:gap-3 rounded-xl border border-border-hover bg-input px-3 sm:px-4 py-3">
+            <span className="flex-1 min-w-0 text-xs sm:text-sm text-text-secondary truncate">{email}</span>
             <button
               onClick={copyEmail}
-              className="flex items-center gap-1 rounded-lg bg-white/10 px-3 py-1 text-xs font-medium text-white hover:bg-white/20 transition-colors cursor-pointer"
+              className="flex items-center gap-1 rounded-lg bg-btn-bg px-3 py-1 text-xs font-medium text-text-primary hover:bg-btn-bg-hover transition-colors cursor-pointer"
             >
               {copied ? (
                 <>
@@ -126,7 +126,7 @@ export default function Contact() {
         <Card>
           <h2 className="mb-4 text-lg font-semibold">{t('contact.form.title')}</h2>
           {status === 'success' ? (
-            <p className="text-sm text-neutral-400">{t('contact.form.success')}</p>
+            <p className="text-sm text-text-secondary">{t('contact.form.success')}</p>
           ) : (
             <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
               <div>
@@ -167,7 +167,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSendDisabled}
-                className="rounded-xl bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="rounded-xl bg-btn-bg px-4 py-2.5 text-sm font-medium text-text-primary hover:bg-btn-bg-hover transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {status === 'sending' ? (
                   <>

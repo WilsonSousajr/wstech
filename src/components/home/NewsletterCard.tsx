@@ -49,15 +49,15 @@ export default function NewsletterCard() {
   return (
     <Card className="flex h-full flex-col justify-between">
       <div>
-        <Bell size={24} className="text-neutral-400" strokeWidth={1.5} />
+        <Bell size={24} className="text-text-secondary" strokeWidth={1.5} />
         <div className="mt-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">
             {t('home.newsletter.label')}
           </p>
-          <h3 className="mt-1 text-lg font-semibold text-white">
+          <h3 className="mt-1 text-lg font-semibold text-text-primary">
             {t('home.newsletter.title')}
           </h3>
-          <p className="mt-0.5 text-sm text-neutral-500">
+          <p className="mt-0.5 text-sm text-text-muted">
             {statusMessage}
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function NewsletterCard() {
 
       {!subscribed && (
         <form onSubmit={handleSubmit} className="mt-5">
-          <div className="flex items-center rounded-xl border border-[#2a2a2a] bg-[#0e0e0e] pl-4 pr-1 py-1">
+          <div className="flex items-center rounded-xl border border-border-hover bg-input pl-4 pr-1 py-1">
             <input
               type="email"
               value={email}
@@ -73,12 +73,12 @@ export default function NewsletterCard() {
               placeholder={t('home.newsletter.placeholder')}
               required
               disabled={loading}
-              className="flex-1 min-w-0 bg-transparent text-sm text-white placeholder-neutral-600 outline-none disabled:opacity-50"
+              className="flex-1 min-w-0 bg-transparent text-sm text-text-primary placeholder-text-faint outline-none disabled:opacity-50"
             />
             <button
               type="submit"
               disabled={loading}
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-500 hover:text-white transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-text-muted hover:text-text-primary transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
             </button>

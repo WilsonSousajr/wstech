@@ -36,28 +36,28 @@ export default function InfoCard() {
     <Card className="flex h-full flex-col justify-between">
       <div>
         {/* Time */}
-        <p className="text-sm font-medium text-neutral-400">{time}</p>
+        <p className="text-sm font-medium text-text-secondary">{time}</p>
 
         {/* Location */}
-        <div className="mt-1 flex items-center gap-1 text-neutral-500">
+        <div className="mt-1 flex items-center gap-1 text-text-muted">
           <MapPin size={12} />
           <span className="text-xs">{t('home.location')}</span>
         </div>
 
         {/* Temperature */}
         <div className="mt-4">
-          <span className="text-4xl sm:text-5xl font-light tracking-tight text-white">28</span>
-          <span className="ml-1 text-lg text-neutral-500">°C</span>
+          <span className="text-4xl sm:text-5xl font-light tracking-tight text-text-primary">28</span>
+          <span className="ml-1 text-lg text-text-muted">°C</span>
         </div>
-        <p className="mt-1 text-sm text-neutral-500">{t('home.weather')}</p>
+        <p className="mt-1 text-sm text-text-muted">{t('home.weather')}</p>
       </div>
 
       {/* Forecast */}
       <div className="mt-4 sm:mt-6 grid grid-cols-6 gap-2">
         {forecast.map((day) => (
           <div key={day.day} className="flex flex-col items-center gap-1">
-            <span className="text-[10px] font-medium tracking-wider text-neutral-600">{day.day}</span>
-            <span className="text-sm text-neutral-400">{day.temp}°</span>
+            <span className="text-[10px] font-medium tracking-wider text-text-faint">{day.day}</span>
+            <span className="text-sm text-text-secondary">{day.temp}°</span>
           </div>
         ))}
       </div>
