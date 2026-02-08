@@ -90,7 +90,14 @@
       "email": "Email",
       "message": "Mensagem",
       "send": "Enviar Mensagem",
-      "success": "Mensagem enviada! Retornarei em breve."
+      "sending": "Enviando...",
+      "success": "Mensagem enviada! Retornarei em breve.",
+      "error": "Algo deu errado. Por favor, tente novamente.",
+      "cooldown": "Aguarde {{seconds}}s",
+      "validation": {
+        "required": "Este campo é obrigatório",
+        "email": "Por favor, insira um email válido"
+      }
     }
   },
   "blog": {

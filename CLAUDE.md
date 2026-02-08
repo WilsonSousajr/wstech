@@ -12,6 +12,7 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 - **i18n**: i18next + react-i18next (EN-US default, PT-BR secondary)
 - **Icons**: Lucide React
 - **Blog**: Markdown files parsed with gray-matter + react-markdown + remark-gfm
+- **Contact Form**: EmailJS (`@emailjs/browser`) — client-side email sending, no backend needed
 - **Font**: Outfit (Google Fonts)
 
 ## Key Architecture Decisions
@@ -22,6 +23,7 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 - **gray-matter requires Buffer polyfill** in the browser (`buffer` package, imported in main.tsx)
 - **Blog posts** loaded via `import.meta.glob('/src/content/posts/*.md')` at build time
 - **GitHub heatmap** fetches real data from `github-contributions-api.jogruber.de` with mock fallback
+- **Contact form** uses EmailJS `sendForm` with form ref — input `name` attrs (`from_name`, `from_email`, `message`) map directly to EmailJS template variables. Requires `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY` in `.env`
 
 ## Design System
 

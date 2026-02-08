@@ -90,7 +90,14 @@
       "email": "Email",
       "message": "Message",
       "send": "Send Message",
-      "success": "Message sent! I'll get back to you soon."
+      "sending": "Sending...",
+      "success": "Message sent! I'll get back to you soon.",
+      "error": "Something went wrong. Please try again.",
+      "cooldown": "Wait {{seconds}}s",
+      "validation": {
+        "required": "This field is required",
+        "email": "Please enter a valid email"
+      }
     }
   },
   "blog": {
