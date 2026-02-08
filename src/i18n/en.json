@@ -16,7 +16,8 @@
       "title": "Stay updated",
       "description": "Get notified about new projects and updates.",
       "placeholder": "your@email.com",
-      "success": "Thanks for subscribing!"
+      "success": "Thanks for subscribing!",
+      "error": "Something went wrong. Please try again."
     },
     "github": "GitHub Activity",
     "activitiesIn": "activities in"

@@ -13,6 +13,7 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 - **Icons**: Lucide React
 - **Blog**: Markdown files parsed with gray-matter + react-markdown + remark-gfm
 - **Contact Form**: EmailJS (`@emailjs/browser`) — client-side email sending, no backend needed
+- **Newsletter**: Buttondown — client-side form POST to embed endpoint, no API key needed
 - **Font**: Outfit (Google Fonts)
 
 ## Key Architecture Decisions
@@ -24,6 +25,7 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 - **Blog posts** loaded via `import.meta.glob('/src/content/posts/*.md')` at build time
 - **GitHub heatmap** fetches real data from `github-contributions-api.jogruber.de` with mock fallback
 - **Contact form** uses EmailJS `sendForm` with form ref — input `name` attrs (`from_name`, `from_email`, `message`) map directly to EmailJS template variables. Requires `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY` in `.env`
+- **Newsletter** uses Buttondown's public embed-subscribe endpoint via `fetch` POST (no API key required). Requires `VITE_BUTTONDOWN_USERNAME` in `.env`
 
 ## Design System
 
