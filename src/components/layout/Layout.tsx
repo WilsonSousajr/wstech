@@ -40,7 +40,7 @@ export default function Layout() {
       {!isHome && (
         <div className="fixed top-4 left-4 sm:top-5 sm:left-6 z-50">
           <Link
-            to="/"
+            to={location.pathname.startsWith('/blog/') ? '/blog' : '/'}
             className="flex items-center gap-2 text-sm text-text-muted hover:text-text-primary transition-colors"
           >
             <ArrowLeft size={16} />
