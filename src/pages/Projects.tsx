@@ -16,7 +16,17 @@ export default function Projects() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {projects.map((project) => (
           <Card key={project.id}>
-            <div className={`mb-4 h-32 rounded-lg ${project.color} opacity-60`} />
+            {project.screenshot ? (
+              <div className="group/img mb-4 h-32 overflow-hidden rounded-lg">
+                <img
+                  src={project.screenshot}
+                  alt={isPtBr ? project.titlePtBr : project.title}
+                  className="w-full transition-transform duration-[3s] ease-in-out group-hover/img:translate-y-[calc(-100%+8rem)]"
+                />
+              </div>
+            ) : (
+              <div className={`mb-4 h-32 rounded-lg ${project.color} opacity-60`} />
+            )}
             <div className="flex items-center gap-2 mb-2">
               <h2 className="text-lg font-semibold text-white">
                 {isPtBr ? project.titlePtBr : project.title}

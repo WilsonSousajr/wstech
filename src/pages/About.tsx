@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Card from '../components/ui/Card';
 
-const timelineKeys = ['job1', 'job2', 'job3'] as const;
+const timelineKeys = ['job1', 'job2', 'job3', 'job4'] as const;
 
 export default function About() {
   const { t } = useTranslation();

@@ -50,26 +50,32 @@
   },
   "about": {
     "title": "About Me",
-    "bio": "I'm Wilson Sousa, a Backend Software Engineer based in Brasilia, Brazil. I specialize in building scalable distributed systems, high-performance APIs, and data pipelines. My daily tools include Python, FastAPI, Django, and Go, backed by PostgreSQL and ClickHouse for data storage and analytics.\n\nBeyond backend development, I have hands-on experience with cloud infrastructure — managing deployments on AWS, VPS, and bare metal servers. I enjoy the full lifecycle: from designing system architecture to deploying and monitoring production workloads.\n\nWhen I'm not writing code, I'm exploring new technologies, contributing to open source, and sharing what I learn through my blog.",
+    "bio": "I'm Wilson Sousa, a Backend Software Engineer based in Brasilia, Brazil. I specialize in engineering high-concurrency distributed systems and scalable microservices, focused in Python (FastAPI, Django) and Hybrid Cloud Architectures.\n\nI have a proven track record of optimizing system performance from reducing storage infrastructure costs by 97% through compression, to deploying production-grade API ecosystems. I'm experienced with database tuning (PostgreSQL, ClickHouse), asynchronous programming, and building RAG systems with LLM integration.\n\nCurrently pursuing a B.Sc. in Computer Engineering at Universidade de Brasilia (UnB). When I'm not writing code, I'm exploring new technologies, contributing to open source, and sharing what I learn through my blog.",
     "experience": "Experience",
     "timeline": {
       "job1": {
-        "role": "Senior Backend Engineer",
-        "company": "Company Z",
-        "period": "2023 - Present",
-        "description": "Leading backend architecture for distributed microservices platform."
+        "role": "Software Engineer (Big Data & Backend)",
+        "company": "Figueiredo & Velloso Advogados",
+        "period": "May 2025 - Present",
+        "description": "Engineered a massive-scale scraping and ETL pipeline for 96 Brazilian tribunals, ingesting 300M+ records. Achieved 97% storage compression (7TB to 180GB) with ClickHouse on bare metal. Built a RAG system with Django and Vector Search to process legal documents (5k+ pages per file)."
       },
       "job2": {
-        "role": "Backend Developer",
-        "company": "Company Y",
-        "period": "2021 - 2023",
-        "description": "Built data pipelines and REST APIs serving millions of requests daily."
+        "role": "Software Engineer (Backend & Integrations)",
+        "company": "CJR (Tech Consultancy)",
+        "period": "Jan 2024 - Dec 2025",
+        "description": "Developed web scrapers for US Bank Data with Python, a geolocation-based Point Recording System using Next.js and Nest.js, and a University Teacher Evaluation backend. Also operated as Business Director managing the software lifecycle for 20+ clients."
       },
       "job3": {
-        "role": "Junior Developer",
-        "company": "Company X",
-        "period": "2019 - 2021",
-        "description": "Developed internal tools and automated deployment workflows."
+        "role": "Software Engineer (AI & EdTech)",
+        "company": "Natural Language Institute",
+        "period": "Dec 2023 - Sept 2024",
+        "description": "Engineered 'Natural Fluency,' an AI language tutor with real-time web browsing and dynamic lesson generation. Optimized a Django/PostgreSQL monolith for large-scale data exports and spearheaded integration of 12+ new languages into the platform."
+      },
+      "job4": {
+        "role": "IT Intern (Automation & Support)",
+        "company": "SERPRO (Federal Data Processing Service)",
+        "period": "Apr 2021 - Jul 2022",
+        "description": "Developed Python and Shell scripts to automate routine server maintenance (backups, provisioning), saving the team 6 hours/week. Provided technical support for hardware and software infrastructure for government systems."
       }
     }
   },

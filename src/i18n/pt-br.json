@@ -50,26 +50,32 @@
   },
   "about": {
     "title": "Sobre Mim",
-    "bio": "Sou Wilson Sousa, Engenheiro de Software Backend baseado em Brasília, Brasil. Sou especializado em construir sistemas distribuídos escaláveis, APIs de alta performance e pipelines de dados. Minhas ferramentas diárias incluem Python, FastAPI, Django e Go, com PostgreSQL e ClickHouse para armazenamento e análise de dados.\n\nAlém do desenvolvimento backend, tenho experiência prática com infraestrutura em nuvem — gerenciando deploys em AWS, VPS e servidores bare metal. Gosto de todo o ciclo: desde o design da arquitetura até o deploy e monitoramento de cargas de trabalho em produção.\n\nQuando não estou escrevendo código, estou explorando novas tecnologias, contribuindo para open source e compartilhando o que aprendo no meu blog.",
+    "bio": "Sou Wilson Sousa, Engenheiro de Software Backend baseado em Brasília, Brasil. Sou especializado em engenharia de sistemas distribuídos de alta concorrência e microsserviços escaláveis, com foco em Python (FastAPI, Django) e Arquiteturas de Nuvem Híbrida.\n\nTenho um histórico comprovado de otimização de performance de sistemas desde reduzir custos de infraestrutura de armazenamento em 97% através de compressão, até implantar ecossistemas de APIs em produção. Tenho experiência com tunning de banco de dados (PostgreSQL, ClickHouse), programação assíncrona e construção de sistemas RAG com integração de LLMs.\n\nAtualmente cursando Engenharia de Computação na Universidade de Brasília (UnB). Quando não estou escrevendo código, estou explorando novas tecnologias, contribuindo para open source e compartilhando o que aprendo no meu blog.",
     "experience": "Experiência",
     "timeline": {
       "job1": {
-        "role": "Engenheiro Backend Sênior",
-        "company": "Empresa Z",
-        "period": "2023 - Presente",
-        "description": "Liderando arquitetura backend para plataforma de microsserviços distribuídos."
+        "role": "Engenheiro de Software (Big Data & Backend)",
+        "company": "Figueiredo & Velloso Advogados",
+        "period": "Mai 2025 - Presente",
+        "description": "Engenharia de pipeline massivo de scraping e ETL para 96 tribunais brasileiros, ingerindo 300M+ registros. Compressão de 97% no armazenamento (7TB para 180GB) com ClickHouse em bare metal. Construção de sistema RAG com Django e Vector Search para processar documentos jurídicos (5k+ páginas por arquivo)."
       },
       "job2": {
-        "role": "Desenvolvedor Backend",
-        "company": "Empresa Y",
-        "period": "2021 - 2023",
-        "description": "Construí pipelines de dados e APIs REST atendendo milhões de requisições diárias."
+        "role": "Engenheiro de Software (Backend & Integrações)",
+        "company": "CJR (Consultoria em Tecnologia)",
+        "period": "Jan 2024 - Dez 2025",
+        "description": "Desenvolvimento de web scrapers para dados bancários americanos com Python, sistema de Registro de Ponto baseado em geolocalização usando Next.js e Nest.js, e backend de sistema de Avaliação de Professores. Também atuei como Diretor de Negócios gerenciando o ciclo de software para 20+ clientes."
       },
       "job3": {
-        "role": "Desenvolvedor Júnior",
-        "company": "Empresa X",
-        "period": "2019 - 2021",
-        "description": "Desenvolvi ferramentas internas e automatizei fluxos de deploy."
+        "role": "Engenheiro de Software (IA & EdTech)",
+        "company": "Natural Language Institute",
+        "period": "Dez 2023 - Set 2024",
+        "description": "Engenharia do 'Natural Fluency', um tutor de idiomas com IA com navegação web em tempo real e geração dinâmica de aulas. Otimização de monolito Django/PostgreSQL para exportações de dados em larga escala e liderança na integração de 12+ novos idiomas na plataforma."
+      },
+      "job4": {
+        "role": "Estagiário de TI (Automação & Suporte)",
+        "company": "SERPRO (Serviço Federal de Processamento de Dados)",
+        "period": "Abr 2021 - Jul 2022",
+        "description": "Desenvolvimento de scripts Python e Shell para automatizar manutenção rotineira de servidores (backups, provisionamento), economizando 6 horas/semana da equipe. Suporte técnico para infraestrutura de hardware e software de sistemas governamentais."
       }
     }
   },
