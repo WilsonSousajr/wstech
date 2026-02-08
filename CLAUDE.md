@@ -69,6 +69,12 @@ src/
 - Layout root has `overflow-x-hidden` as a safety net against horizontal scroll
 - GitHub heatmap uses `.heatmap-scroll` class for horizontal scrolling with styled scrollbar on small screens
 
+## Deployment
+
+- **Hosting**: Vercel (team: `wilsonsousajrs-projects`, project: `wstech`)
+- All `VITE_*` env vars are configured in Vercel for production, preview, and development environments
+- These are client-side variables (bundled into JS at build time) — safe to expose since they're public keys/identifiers
+
 ## Important Notes
 
 - Tailwind CSS v4 requires `@tailwindcss/vite` in vite.config.ts (not PostCSS config)
