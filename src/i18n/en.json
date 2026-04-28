@@ -13,7 +13,7 @@
   },
   "home": {
     "role": "FullStack Engineer",
-    "bio": "Backend Software Engineer passionate about building scalable distributed systems and high-performance APIs.",
+    "bio": "FullStack Software Engineer passionate about building scalable distributed systems and high-performance APIs.",
     "location": "Brasilia, Brazil",
     "weather": "Scattered Clouds",
     "newsletter": {
@@ -70,7 +70,7 @@
   },
   "about": {
     "title": "About Me",
-    "bio": "I'm Wilson Sousa, a Backend Software Engineer based in Brasilia, Brazil. I specialize in engineering high-concurrency distributed systems and scalable microservices, focused in Python (FastAPI, Django) and Hybrid Cloud Architectures.\n\nI have a proven track record of optimizing system performance from reducing storage infrastructure costs by 97% through compression, to deploying production-grade API ecosystems. I'm experienced with database tuning (PostgreSQL, ClickHouse), asynchronous programming, and building RAG systems with LLM integration.\n\nCurrently pursuing a B.Sc. in Computer Engineering at Universidade de Brasilia (UnB). When I'm not writing code, I'm exploring new technologies, contributing to open source, and sharing what I learn through my blog.",
+    "bio": "I'm Wilson Sousa, a FullStack Software Engineer based in Brasilia, Brazil. I specialize in engineering high-concurrency distributed systems and scalable microservices, focused in Python (FastAPI, Django) and Hybrid Cloud Architectures.\n\nI have a proven track record of optimizing system performance from reducing storage infrastructure costs by 97% through compression, to deploying production-grade API ecosystems. I'm experienced with database tuning (PostgreSQL, ClickHouse), asynchronous programming, and building RAG systems with LLM integration.\n\nCurrently pursuing a B.Sc. in Computer Engineering at Universidade de Brasilia (UnB). When I'm not writing code, I'm exploring new technologies, contributing to open source, and sharing what I learn through my blog.",
     "experience": "Experience",
     "timeline": {
       "job1": {

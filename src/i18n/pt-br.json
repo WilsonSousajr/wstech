@@ -12,8 +12,8 @@
     "loading": "Carregando..."
   },
   "home": {
-    "role": "Engenheiro Backend",
-    "bio": "Engenheiro de Software Backend apaixonado por construir sistemas distribuídos escaláveis e APIs de alta performance.",
+    "role": "Engenheiro FullStack",
+    "bio": "Engenheiro de Software FullStack apaixonado por construir sistemas distribuídos escaláveis e APIs de alta performance.",
     "location": "Brasília, Brasil",
     "weather": "Nuvens Dispersas",
     "newsletter": {
@@ -70,7 +70,7 @@
   },
   "about": {
     "title": "Sobre Mim",
-    "bio": "Sou Wilson Sousa, Engenheiro de Software Backend baseado em Brasília, Brasil. Sou especializado em engenharia de sistemas distribuídos de alta concorrência e microsserviços escaláveis, com foco em Python (FastAPI, Django) e Arquiteturas de Nuvem Híbrida.\n\nTenho um histórico comprovado de otimização de performance de sistemas desde reduzir custos de infraestrutura de armazenamento em 97% através de compressão, até implantar ecossistemas de APIs em produção. Tenho experiência com tunning de banco de dados (PostgreSQL, ClickHouse), programação assíncrona e construção de sistemas RAG com integração de LLMs.\n\nAtualmente cursando Engenharia de Computação na Universidade de Brasília (UnB). Quando não estou escrevendo código, estou explorando novas tecnologias, contribuindo para open source e compartilhando o que aprendo no meu blog.",
+    "bio": "Sou Wilson Sousa, Engenheiro de Software FullStack baseado em Brasília, Brasil. Sou especializado em engenharia de sistemas distribuídos de alta concorrência e microsserviços escaláveis, com foco em Python (FastAPI, Django) e Arquiteturas de Nuvem Híbrida.\n\nTenho um histórico comprovado de otimização de performance de sistemas desde reduzir custos de infraestrutura de armazenamento em 97% através de compressão, até implantar ecossistemas de APIs em produção. Tenho experiência com tunning de banco de dados (PostgreSQL, ClickHouse), programação assíncrona e construção de sistemas RAG com integração de LLMs.\n\nAtualmente cursando Engenharia de Computação na Universidade de Brasília (UnB). Quando não estou escrevendo código, estou explorando novas tecnologias, contribuindo para open source e compartilhando o que aprendo no meu blog.",
     "experience": "Experiência",
     "timeline": {
       "job1": {
