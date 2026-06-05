@@ -24,7 +24,7 @@ export default function Home() {
         <NavCard to="/contact" translationKey="contact" icon={Mail} />
       </div>
       <div style={{ gridArea: 'blog' }} className="min-w-0 animate-fade-up [animation-delay:250ms]">
-        <NavCard to="/blog" translationKey="blog" icon={BookOpen} />
+        <NavCard to="https://blog.wstech.tech" translationKey="blog" icon={BookOpen} />
       </div>
       <div style={{ gridArea: 'newsletter' }} className="min-w-0 animate-fade-up [animation-delay:300ms]">
         <NewsletterCard />

@@ -11,7 +11,7 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 - **Routing**: React Router v7
 - **i18n**: i18next + react-i18next (EN-US default, PT-BR secondary)
 - **Icons**: Lucide React
-- **Blog**: Markdown files parsed with gray-matter + react-markdown + remark-gfm
+- **Blog**: lives separately at `blog.wstech.tech` (Hugo, repo `wstech-blog`) — NOT in this app. The home bento "Blog" card is an external link.
 - **Contact Form**: EmailJS (`@emailjs/browser`) — client-side email sending, no backend needed
 - **Newsletter**: Buttondown — client-side form POST to embed endpoint, no API key needed
 - **Font**: Outfit (Google Fonts)
@@ -21,8 +21,7 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 - **No header navigation** — cards on the home bento grid are the only navigation
 - **Floating UI** — language toggle (top-right) and back button on inner pages (top-left)
 - **CSS Grid with explicit `grid-template-areas`** for the 4-column bento layout
-- **gray-matter requires Buffer polyfill** in the browser (`buffer` package, imported in main.tsx)
-- **Blog posts** loaded via `import.meta.glob('/src/content/posts/*.md')` at build time
+- **`NavCard` handles internal and external links** — an `http(s)` `to` renders a new-tab `<a>` (with an `ArrowUpRight` affordance); otherwise a react-router `<Link>`. The Blog card uses this to point at `blog.wstech.tech`.
 - **GitHub heatmap** fetches real data from `github-contributions-api.jogruber.de` with mock fallback
 - **Contact form** uses EmailJS `sendForm` with form ref — input `name` attrs (`from_name`, `from_email`, `message`) map directly to EmailJS template variables. Requires `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY` in `.env`
 - **Newsletter** uses Buttondown's public embed-subscribe endpoint via `fetch` POST (no API key required). Requires `VITE_BUTTONDOWN_USERNAME` in `.env`
@@ -48,16 +47,15 @@ Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built a
 ```
 src/
   components/
-    blog/        — PostCard, PostContent
     home/        — ProfileCard, InfoCard, NavCard, NewsletterCard, GitHubHeatmap
     layout/      — Layout (with floating lang toggle, theme toggle + back button)
     ui/          — Card (reusable)
-  content/
-    posts/       — Markdown blog posts with frontmatter
   data/          — projects.ts (sample project data)
   i18n/          — en.json, pt-br.json, index.ts
-  pages/         — Home, Projects, About, Contact, Blog, BlogPost, NotFound
+  pages/         — Home, Projects, About, Contact, NotFound
 ```
+
+The blog is a separate project — see the `wstech-blog` repo (Hugo) deployed to `blog.wstech.tech`.
 
 ## Workflow Rules
 
@@ -80,7 +78,6 @@ src/
 ## Important Notes
 
 - Tailwind CSS v4 requires `@tailwindcss/vite` in vite.config.ts (not PostCSS config)
-- `globalThis.Buffer` assignment uses `(globalThis as Record<string, unknown>)` cast to avoid TS7017
 - **All user-visible strings must use `t()` from react-i18next** — never hardcode English text in components (includes aria-labels, loading states, legend labels)
 - Icon-only buttons/links must always have `aria-label` with a translated string
 - All external `<a>` tags must use `target="_blank" rel="noopener noreferrer"`

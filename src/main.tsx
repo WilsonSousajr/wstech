@@ -1,6 +1,3 @@
-import { Buffer } from 'buffer';
-(globalThis as Record<string, unknown>).Buffer = Buffer;
-
 import './i18n';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
