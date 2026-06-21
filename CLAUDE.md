@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Personal portfolio website for Wilson Sousa (Backend Software Engineer). Built as a monochrome dark bento-grid dashboard inspired by birobirobiro.dev.
+Personal portfolio website for Wilson Sousa (Senior FullStack Engineer). Built as a monochrome dark bento-grid dashboard inspired by birobirobiro.dev.
 
 ## Tech Stack
 
