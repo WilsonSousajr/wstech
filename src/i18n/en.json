@@ -74,24 +74,30 @@
     "experience": "Experience",
     "timeline": {
       "job1": {
-        "role": "Software Engineer (Big Data & Backend)",
-        "company": "Figueiredo & Velloso Advogados",
-        "period": "May 2025 - Present",
-        "description": "Engineered a massive-scale scraping and ETL pipeline for 96 Brazilian tribunals, ingesting 300M+ records. Achieved 97% storage compression (7TB to 180GB) with ClickHouse on bare metal. Built a RAG system with Django and Vector Search to process legal documents (5k+ pages per file)."
+        "role": "Senior FullStack Engineer",
+        "company": "Accenture",
+        "period": "Jun 2026 - Present",
+        "description": "Building and maintaining Python backend applications (FastAPI, Django REST) and Angular frontends for enterprise clients. Designing REST APIs and SOAP integrations across corporate systems, modernizing legacy platforms, and driving AI/LLM integrations and workflow automation within an agile, multidisciplinary team."
       },
       "job2": {
+        "role": "Software Engineer (Big Data & Backend)",
+        "company": "Figueiredo & Velloso Advogados",
+        "period": "May 2025 - Jun 2026",
+        "description": "Engineered a massive-scale scraping and ETL pipeline for 96 Brazilian tribunals, ingesting 300M+ records. Achieved 97% storage compression (7TB to 180GB) with ClickHouse on bare metal. Built a RAG system with Django and Vector Search to process legal documents (5k+ pages per file)."
+      },
+      "job3": {
         "role": "Software Engineer (Backend & Integrations)",
         "company": "CJR (Tech Consultancy)",
         "period": "Jan 2024 - Dec 2025",
         "description": "Developed web scrapers for US Bank Data with Python, a geolocation-based Point Recording System using Next.js and Nest.js, and a University Teacher Evaluation backend. Also operated as Business Director managing the software lifecycle for 20+ clients."
       },
-      "job3": {
+      "job4": {
         "role": "Software Engineer (AI & EdTech)",
         "company": "Natural Language Institute",
         "period": "Dec 2023 - Sept 2024",
         "description": "Engineered 'Natural Fluency,' an AI language tutor with real-time web browsing and dynamic lesson generation. Optimized a Django/PostgreSQL monolith for large-scale data exports and spearheaded integration of 12+ new languages into the platform."
       },
-      "job4": {
+      "job5": {
         "role": "IT Intern (Automation & Support)",
         "company": "SERPRO (Federal Data Processing Service)",
         "period": "Apr 2021 - Jul 2022",

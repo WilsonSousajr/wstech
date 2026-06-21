@@ -74,24 +74,30 @@
     "experience": "Experiência",
     "timeline": {
       "job1": {
-        "role": "Engenheiro de Software (Big Data & Backend)",
-        "company": "Figueiredo & Velloso Advogados",
-        "period": "Mai 2025 - Presente",
-        "description": "Engenharia de pipeline massivo de scraping e ETL para 96 tribunais brasileiros, ingerindo 300M+ registros. Compressão de 97% no armazenamento (7TB para 180GB) com ClickHouse em bare metal. Construção de sistema RAG com Django e Vector Search para processar documentos jurídicos (5k+ páginas por arquivo)."
+        "role": "Engenheiro FullStack Sênior",
+        "company": "Accenture",
+        "period": "Jun 2026 - Presente",
+        "description": "Desenvolvimento e manutenção de aplicações backend em Python (FastAPI, Django REST) e interfaces frontend em Angular para clientes corporativos. Projeto de APIs REST e integrações SOAP entre sistemas corporativos, modernização de sistemas legados e atuação em integrações com IA/LLMs e automação de fluxos em time ágil e multidisciplinar."
       },
       "job2": {
+        "role": "Engenheiro de Software (Big Data & Backend)",
+        "company": "Figueiredo & Velloso Advogados",
+        "period": "Mai 2025 - Jun 2026",
+        "description": "Engenharia de pipeline massivo de scraping e ETL para 96 tribunais brasileiros, ingerindo 300M+ registros. Compressão de 97% no armazenamento (7TB para 180GB) com ClickHouse em bare metal. Construção de sistema RAG com Django e Vector Search para processar documentos jurídicos (5k+ páginas por arquivo)."
+      },
+      "job3": {
         "role": "Engenheiro de Software (Backend & Integrações)",
         "company": "CJR (Consultoria em Tecnologia)",
         "period": "Jan 2024 - Dez 2025",
         "description": "Desenvolvimento de web scrapers para dados bancários americanos com Python, sistema de Registro de Ponto baseado em geolocalização usando Next.js e Nest.js, e backend de sistema de Avaliação de Professores. Também atuei como Diretor de Negócios gerenciando o ciclo de software para 20+ clientes."
       },
-      "job3": {
+      "job4": {
         "role": "Engenheiro de Software (IA & EdTech)",
         "company": "Natural Language Institute",
         "period": "Dez 2023 - Set 2024",
         "description": "Engenharia do 'Natural Fluency', um tutor de idiomas com IA com navegação web em tempo real e geração dinâmica de aulas. Otimização de monolito Django/PostgreSQL para exportações de dados em larga escala e liderança na integração de 12+ novos idiomas na plataforma."
       },
-      "job4": {
+      "job5": {
         "role": "Estagiário de TI (Automação & Suporte)",
         "company": "SERPRO (Serviço Federal de Processamento de Dados)",
         "period": "Abr 2021 - Jul 2022",
