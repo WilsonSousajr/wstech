@@ -12,6 +12,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "omatty",
+    title: "omatty — Terminal ADE for Claude Code",
+    titlePtBr: "omatty — ADE de Terminal para Claude Code",
+    year: 2026,
+    description:
+      "A terminal-native agentic development environment written in Go that runs multiple parallel Claude Code sessions from several repositories side by side in one window, with live session status, git worktree isolation, and a diff review pane.",
+    descriptionPtBr:
+      "Um ambiente de desenvolvimento agêntico nativo de terminal escrito em Go que executa várias sessões paralelas do Claude Code de diferentes repositórios lado a lado em uma única janela, com status das sessões em tempo real, isolamento por git worktree e um painel de revisão de diff.",
+    color: "bg-violet-600",
+    link: "https://github.com/WilsonSousajr/omatty",
+  },
+  {
     id: "portfolio",
     title: "Personal Portfolio Website",
     titlePtBr: "Site Pessoal de Portfólio",
