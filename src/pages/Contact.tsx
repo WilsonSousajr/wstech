@@ -101,19 +101,19 @@ export default function Contact() {
   const isSendDisabled = status === 'sending' || cooldown > 0;
 
   const inputClass =
-    'rounded-xl border border-border-hover bg-input px-4 py-2.5 text-sm text-text-primary placeholder-text-faint focus:border-text-muted focus:outline-none disabled:opacity-50';
+    'rounded-2xl border border-border-hover bg-input px-4 py-2.5 text-sm text-text-primary placeholder-text-faint focus:border-text-muted focus:outline-none disabled:opacity-50';
 
   return (
-    <div className="pt-10 sm:pt-8">
+    <div className="pt-2 sm:pt-8">
       <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{t('contact.title')}</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card>
           <h2 className="mb-4 text-lg font-semibold">{t('contact.quickContact')}</h2>
-          <div className="flex items-center gap-2 sm:gap-3 rounded-xl border border-border-hover bg-input px-3 sm:px-4 py-3">
+          <div className="flex items-center gap-2 sm:gap-3 rounded-full border border-border-hover bg-input px-3 sm:px-4 py-3">
             <span className="flex-1 min-w-0 text-xs sm:text-sm text-text-secondary truncate">{email}</span>
             <button
               onClick={copyEmail}
-              className="flex items-center gap-1 rounded-lg bg-btn-bg px-3 py-1 text-xs font-medium text-text-primary hover:bg-btn-bg-hover transition-colors cursor-pointer"
+              className="flex items-center gap-1 rounded-full bg-btn-bg px-3 py-1 text-xs font-medium text-text-primary hover:bg-btn-bg-hover transition-colors cursor-pointer"
             >
               {copied ? (
                 <>
@@ -173,7 +173,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSendDisabled}
-                className="rounded-xl bg-btn-bg px-4 py-2.5 text-sm font-medium text-text-primary hover:bg-btn-bg-hover transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="rounded-full bg-btn-bg px-4 py-2.5 text-sm font-medium text-text-primary hover:bg-btn-bg-hover transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {status === 'sending' ? (
                   <>

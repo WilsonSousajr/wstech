@@ -8,7 +8,7 @@ export default function Projects() {
   const isPtBr = i18n.language === 'pt-BR';
 
   return (
-    <div className="pt-10 sm:pt-8">
+    <div className="pt-2 sm:pt-8">
       <div className="mb-6 sm:mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold">{t('projects.title')}</h1>
         <p className="mt-2 text-text-muted">{t('projects.subtitle')}</p>
@@ -17,7 +17,7 @@ export default function Projects() {
         {projects.map((project) => (
           <Card key={project.id}>
             {project.screenshot ? (
-              <div className="group/img mb-4 h-32 overflow-hidden rounded-lg">
+              <div className="group/img mb-4 h-32 overflow-hidden rounded-2xl">
                 <img
                   src={project.screenshot}
                   alt={isPtBr ? project.titlePtBr : project.title}
@@ -25,7 +25,7 @@ export default function Projects() {
                 />
               </div>
             ) : (
-              <div className={`mb-4 h-32 rounded-lg ${project.color} opacity-60`} />
+              <div className={`mb-4 h-32 rounded-2xl ${project.color} opacity-60`} />
             )}
             <div className="flex items-center gap-2 mb-2">
               <h2 className="text-lg font-semibold text-text-primary">

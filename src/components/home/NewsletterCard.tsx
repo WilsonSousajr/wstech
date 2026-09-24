@@ -65,7 +65,7 @@ export default function NewsletterCard() {
 
       {!subscribed && (
         <form onSubmit={handleSubmit} className="mt-5">
-          <div className="flex items-center rounded-xl border border-border-hover bg-input pl-4 pr-1 py-1">
+          <div className="flex items-center rounded-full border border-border-hover bg-input pl-4 pr-1 py-1">
             <input
               type="email"
               value={email}
@@ -78,7 +78,7 @@ export default function NewsletterCard() {
             <button
               type="submit"
               disabled={loading}
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-text-muted hover:text-text-primary transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-text-muted hover:text-text-primary transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label={t('home.newsletter.subscribe')}
             >
               {loading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}

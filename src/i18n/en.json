@@ -6,7 +6,9 @@
     "contact": "Contact",
     "blog": "Blog",
     "back": "Back",
-    "switchLanguage": "Switch language"
+    "switchLanguage": "Switch language",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme"
   },
   "common": {
     "loading": "Loading..."

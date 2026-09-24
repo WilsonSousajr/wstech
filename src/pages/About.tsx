@@ -7,7 +7,7 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <div className="pt-10 sm:pt-8">
+    <div className="pt-2 sm:pt-8">
       <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{t('about.title')}</h1>
       <div className="grid gap-4">
         <Card>
@@ -20,7 +20,7 @@ export default function About() {
           <div className="relative border-l-2 border-border-hover pl-6">
             {timelineKeys.map((key, i) => (
               <div key={key} className={i < timelineKeys.length - 1 ? 'mb-8' : ''}>
-                <div className="absolute -left-[9px] mt-1 h-4 w-4 rounded-full border-2 border-border-hover bg-surface" />
+                <div className="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-timeline-dot" />
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="font-semibold text-text-primary">{t(`about.timeline.${key}.role`)}</h3>
                   <span className="text-sm text-text-muted">

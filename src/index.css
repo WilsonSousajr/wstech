@@ -2,21 +2,20 @@
 
 @theme {
   --color-bg: #0a0a0a;
-  --color-surface: #141414;
-  --color-surface-hover: #1a1a1a;
-  --color-border: #232323;
-  --color-border-hover: #2a2a2a;
-  --color-input: #0e0e0e;
-  --color-badge: #1a1a1a;
+  /* Surfaces that sit on glass are translucent so the material shows through */
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-input: rgba(0, 0, 0, 0.35);
+  --color-badge: rgba(255, 255, 255, 0.06);
+  --color-timeline-dot: #3a3a3a;
   --color-text-primary: #ffffff;
-  --color-text-secondary: #a3a3a3;
-  --color-text-muted: #737373;
-  --color-text-faint: #525252;
+  --color-text-secondary: #b0b0b0;
+  --color-text-muted: #8f8f8f;
+  --color-text-faint: #6b6b6b;
   --color-scrollbar: #333333;
   --color-btn-bg: rgba(255, 255, 255, 0.1);
   --color-btn-bg-hover: rgba(255, 255, 255, 0.2);
   /* Heatmap intensity */
-  --color-heatmap-0: #161616;
+  --color-heatmap-0: rgba(255, 255, 255, 0.05);
   --color-heatmap-1: #2a2a2a;
   --color-heatmap-2: #4a4a4a;
   --color-heatmap-3: #7a7a7a;
@@ -28,18 +27,40 @@
   --color-heatmap-legend-4: #d0d0d0;
 }
 
+/* ─── Liquid glass material + backdrop (no utilities needed) ─── */
+:root {
+  --backdrop-base: #0a0a0a;
+  --backdrop-spot: rgba(255, 255, 255, 0.16);
+  --backdrop-grain-opacity: 0.09;
+  /* The dune photo is a bright, high-key shot: darkened for the dark theme */
+  --photo-filter: brightness(0.38) contrast(1.1);
+  --backdrop-wash: transparent;
+
+  --glass-smoky-core: rgba(8, 8, 8, 0.5);
+  --glass-smoky-edge: rgba(8, 8, 8, 0.12);
+  --glass-smoky-glow: rgba(255, 255, 255, 0.05);
+  --glass-clear-tint: rgba(0, 0, 0, 0.12);
+  --glass-clear-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --glass-rim: 255, 255, 255;
+  --glass-rim-max: 0.75;
+  --glass-hairline: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --glass-hover-glow: inset 0 0 28px rgba(255, 255, 255, 0.05);
+  --glass-focus: rgba(255, 255, 255, 0.85);
+  --glass-solid: #161616;
+}
+
 .light {
-  --color-bg: #ffffff;
-  --color-surface: #f5f5f5;
-  --color-surface-hover: #ebebeb;
-  --color-border: #e5e5e5;
-  --color-border-hover: #d4d4d4;
-  --color-input: #f0f0f0;
-  --color-badge: #e5e5e5;
+  --color-bg: #f5f5f5;
+  --color-border-hover: rgba(0, 0, 0, 0.1);
+  --color-input: rgba(255, 255, 255, 0.55);
+  --color-badge: rgba(0, 0, 0, 0.05);
+  --color-timeline-dot: #d4d4d4;
   --color-text-primary: #0a0a0a;
-  --color-text-secondary: #525252;
-  --color-text-muted: #737373;
-  --color-text-faint: #a3a3a3;
+  /* Darker than usual: light glass is clear, so text may sit over the dark dune */
+  --color-text-secondary: #262626;
+  --color-text-muted: #333333;
+  --color-text-faint: #4d4d4d;
   --color-scrollbar: #cccccc;
   --color-btn-bg: rgba(0, 0, 0, 0.08);
   --color-btn-bg-hover: rgba(0, 0, 0, 0.15);
@@ -53,6 +74,25 @@
   --color-heatmap-legend-2: #5a7fa3;
   --color-heatmap-legend-3: #3a6490;
   --color-heatmap-legend-4: #2a4a6b;
+
+  --backdrop-base: #e8e8e8;
+  --backdrop-spot: rgba(255, 255, 255, 0.45);
+  --backdrop-grain-opacity: 0.07;
+  --photo-filter: brightness(1.02) contrast(0.8);
+  --backdrop-wash: rgba(240, 240, 240, 0.2);
+
+  --glass-smoky-core: rgba(255, 255, 255, 0.4);
+  --glass-smoky-edge: rgba(255, 255, 255, 0.05);
+  --glass-smoky-glow: rgba(255, 255, 255, 0.2);
+  --glass-clear-tint: rgba(255, 255, 255, 0.35);
+  --glass-clear-text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+  --glass-rim: 255, 255, 255;
+  --glass-rim-max: 0.95;
+  --glass-hairline: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --glass-hover-glow: inset 0 0 28px rgba(255, 255, 255, 0.4);
+  --glass-focus: rgba(0, 0, 0, 0.75);
+  --glass-solid: #ffffff;
 }
 
 * {
@@ -104,15 +144,271 @@ body {
   }
 }
 
-/* ─── Staggered fade-in ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ─── Staggered entrance ───
+   The wrapper only rises; the glass fades itself. A wrapper with animating
+   opacity would become the glass's backdrop root and hide the page behind it.
+   Stagger with `[--fade-delay:Nms]` on the wrapper. */
+@keyframes rise {
+  from { transform: translateY(12px); }
+  to { transform: none; }
 }
 
+@keyframes glass-fade {
+  from { opacity: 0; }
+}
+
+@keyframes glass-idle {}
+
 .animate-fade-up {
-  opacity: 0;
-  animation: fadeUp 0.5s ease-out forwards;
+  animation: rise 0.5s ease-out var(--fade-delay, 0ms) both;
+}
+
+.animate-fade-up .glass {
+  --glass-enter: glass-fade 0.5s ease-out var(--fade-delay, 0ms) both;
+}
+
+/* ─── Backdrop ─── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  height: 100lvh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+  background: var(--backdrop-base);
+}
+
+.backdrop > * {
+  position: absolute;
+}
+
+.backdrop picture {
+  inset: 0;
+}
+
+.backdrop__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--photo-filter);
+  transition: filter 400ms ease-out;
+}
+
+.backdrop__wash {
+  inset: 0;
+  background: var(--backdrop-wash);
+}
+
+.backdrop__spot {
+  left: 0;
+  top: 0;
+  width: 760px;
+  height: 760px;
+  background: radial-gradient(closest-side, var(--backdrop-spot), transparent);
+  transform: translate3d(18vw, 12vh, 0) translate(-50%, -50%);
+  will-change: transform;
+}
+
+.backdrop__grain {
+  inset: 0;
+  opacity: var(--backdrop-grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Touch devices: the light drifts on its own (no JS per frame) */
+.light-auto .backdrop__spot {
+  animation: spot-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes spot-drift {
+  0% { transform: translate3d(15vw, 10vh, 0) translate(-50%, -50%); }
+  50% { transform: translate3d(80vw, 35vh, 0) translate(-50%, -50%); }
+  100% { transform: translate3d(30vw, 85vh, 0) translate(-50%, -50%); }
+}
+
+/* ─── Glass ─── */
+@property --rim-angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 315deg;
+}
+
+@property --rim-strength {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0.7;
+}
+
+
+.glass {
+  position: relative;
+  box-shadow: var(--glass-bezel, 0 0 transparent), var(--glass-shadow);
+  animation: var(--glass-enter, glass-idle 0s), var(--glass-sway, glass-idle 0s);
+  transition-property: background-color, box-shadow, transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+/* Rim: a 1px ring that glints toward the light, with a dimmer opposite glint */
+.glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 300ms ease-out;
+  background:
+    conic-gradient(
+      from var(--rim-angle),
+      rgba(var(--glass-rim), calc(var(--rim-strength) * var(--glass-rim-max))) 0deg,
+      rgba(var(--glass-rim), 0) 70deg,
+      rgba(var(--glass-rim), calc(var(--rim-strength) * var(--glass-rim-max) * 0.45)) 180deg,
+      rgba(var(--glass-rim), 0) 290deg,
+      rgba(var(--glass-rim), calc(var(--rim-strength) * var(--glass-rim-max))) 360deg
+    ),
+    linear-gradient(var(--glass-hairline), var(--glass-hairline));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+
+/* Smoky: dark (or milky) enough in the middle for text, thinner toward the lensing edges */
+.glass--smoky {
+  background:
+    radial-gradient(60% 80% at 50% 35%, var(--glass-smoky-glow), transparent 70%),
+    radial-gradient(130% 140% at 50% 45%, var(--glass-smoky-core) 45%, var(--glass-smoky-edge) 100%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+/* Clear: almost no tint — a pure lens for small floating controls */
+.glass--clear {
+  background-color: var(--glass-clear-tint);
+  text-shadow: var(--glass-clear-text-shadow);
+  -webkit-backdrop-filter: blur(6px) saturate(130%);
+  backdrop-filter: blur(6px) saturate(130%);
+}
+
+@media (hover: hover) {
+  .glass:hover {
+    box-shadow: var(--glass-bezel, 0 0 transparent), var(--glass-shadow), var(--glass-hover-glow);
+  }
+
+  .glass:hover::after {
+    opacity: 1;
+  }
+}
+
+.glass:active {
+  transform: scale(0.985);
+  transition-duration: 120ms;
+}
+
+/* Focus: the link wrapping a card hands its focus ring to the glass */
+a:has(> .glass):focus-visible {
+  outline: none;
+}
+
+a:focus-visible > .glass {
+  outline: 2px solid var(--glass-focus);
+  outline-offset: 3px;
+}
+
+/* Touch devices: rims sway gently instead of tracking a cursor */
+.light-auto .glass {
+  --glass-sway: rim-sway 9s ease-in-out var(--rim-phase, 0s) infinite alternate;
+}
+
+@keyframes rim-sway {
+  from { --rim-angle: 285deg; }
+  to { --rim-angle: 350deg; }
+}
+
+/* Safari/Firefox fallback: lighter frost so light glass stays clear */
+.light .glass--smoky {
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+}
+
+/* Light theme: a bright, thick-looking glass edge */
+.light .glass {
+  --glass-bezel: inset 0 0 0 1px rgba(255, 255, 255, 0.7), inset 0 0 18px rgba(255, 255, 255, 0.45);
+}
+
+/* Soap-film sheen across the whole light card: a very faint, static spectral
+   wash angled by the light. Sits behind the content. */
+.light .glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.45;
+  background: linear-gradient(
+    calc(var(--rim-angle) + 60deg),
+    transparent 5%,
+    hsl(330 100% 78% / 0.14) 25%,
+    hsl(45 100% 70% / 0.12) 40%,
+    hsl(150 80% 68% / 0.12) 55%,
+    hsl(200 100% 72% / 0.14) 70%,
+    hsl(265 100% 78% / 0.14) 85%,
+    transparent 100%
+  );
+}
+
+/* ─── Accessibility fallbacks ─── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .glass,
+  .light-auto .backdrop__spot {
+    animation: none !important;
+  }
+
+  .glass:active {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .glass--smoky,
+  .glass--clear {
+    background: var(--glass-solid);
+    text-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none !important;
+  }
+
+  .glass::after {
+    opacity: 1;
+    background: var(--color-border-hover);
+  }
+
+  .light .glass::before {
+    display: none;
+  }
+
+  .backdrop > * {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .glass {
+    background: Canvas !important;
+    border: 1px solid CanvasText;
+    backdrop-filter: none !important;
+  }
+
+  .glass::after,
+  .glass::before,
+  .backdrop {
+    display: none;
+  }
 }
 
 /* ─── GitHub heatmap horizontal scroll on small screens ─── */

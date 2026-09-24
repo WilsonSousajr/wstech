@@ -6,7 +6,9 @@
     "contact": "Contato",
     "blog": "Blog",
     "back": "Voltar",
-    "switchLanguage": "Trocar idioma"
+    "switchLanguage": "Trocar idioma",
+    "themeToLight": "Mudar para tema claro",
+    "themeToDark": "Mudar para tema escuro"
   },
   "common": {
     "loading": "Carregando..."
