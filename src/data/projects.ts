@@ -21,7 +21,7 @@ export const projects: Project[] = [
     descriptionPtBr:
       "Um ambiente de desenvolvimento agêntico nativo de terminal escrito em Go que executa várias sessões paralelas do Claude Code de diferentes repositórios lado a lado em uma única janela, com status das sessões em tempo real, isolamento por git worktree e um painel de revisão de diff.",
     color: "bg-violet-600",
-    link: "https://github.com/WilsonSousajr/omatty",
+    link: "https://omatty.com",
     screenshot: "/screenshots/omatty.jpg",
   },
   {
