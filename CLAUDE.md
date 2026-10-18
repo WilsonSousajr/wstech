@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Personal portfolio website for Wilson Sousa (Senior FullStack Engineer). Built as a monochrome bento-grid dashboard (inspired by birobirobiro.dev) with an Apple-style liquid glass look over a dune photograph, in dark and light themes.
+Personal portfolio website for Wilson Sousa (Full Stack Engineer). Built as a monochrome bento-grid dashboard (inspired by birobirobiro.dev) with an Apple-style liquid glass look over a dune photograph, in dark and light themes.
 
 ## Tech Stack
 

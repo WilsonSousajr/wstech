@@ -14,8 +14,8 @@
     "loading": "Carregando..."
   },
   "home": {
-    "role": "Engenheiro FullStack Sênior",
-    "bio": "Engenheiro de Software FullStack Sênior apaixonado por construir sistemas distribuídos escaláveis e APIs de alta performance.",
+    "role": "Engenheiro Full Stack",
+    "bio": "Engenheiro de Software Full Stack apaixonado por construir sistemas distribuídos escaláveis e APIs de alta performance.",
     "location": "Brasília, Brasil",
     "weather": "Nuvens Dispersas",
     "newsletter": {
@@ -72,35 +72,35 @@
   },
   "about": {
     "title": "Sobre Mim",
-    "bio": "Sou Wilson Sousa, Engenheiro de Software FullStack Sênior baseado em Brasília, Brasil. Sou especializado em engenharia de sistemas distribuídos de alta concorrência e microsserviços escaláveis, com foco em Python (FastAPI, Django) e Arquiteturas de Nuvem Híbrida.\n\nTenho um histórico comprovado de otimização de performance de sistemas desde reduzir custos de infraestrutura de armazenamento em 97% através de compressão, até implantar ecossistemas de APIs em produção. Tenho experiência com tunning de banco de dados (PostgreSQL, ClickHouse), programação assíncrona e construção de sistemas RAG com integração de LLMs.\n\nAtualmente cursando Engenharia de Computação na Universidade de Brasília (UnB). Quando não estou escrevendo código, estou explorando novas tecnologias, contribuindo para open source e compartilhando o que aprendo no meu blog.",
+    "bio": "Sou Wilson Sousa, Engenheiro de Software Full Stack com mais de 4 anos de experiência, baseado em Brasília, Brasil. Sou especializado em engenharia de sistemas distribuídos de alta concorrência e microsserviços escaláveis, com foco em Python (FastAPI, Django) e Arquiteturas de Nuvem Híbrida.\n\nTenho um histórico comprovado de otimização de performance de sistemas desde reduzir custos de infraestrutura de armazenamento em 97% através de compressão, até implantar ecossistemas de APIs em produção. Tenho experiência com tunning de banco de dados (PostgreSQL, ClickHouse), programação assíncrona e construção de sistemas RAG com integração de LLMs.\n\nAtualmente cursando Engenharia de Computação na Universidade de Brasília (UnB). Quando não estou escrevendo código, estou explorando novas tecnologias, contribuindo para open source e compartilhando o que aprendo no meu blog.",
     "experience": "Experiência",
     "timeline": {
       "job1": {
-        "role": "Engenheiro FullStack Sênior",
+        "role": "Engenheiro de Software",
         "company": "Accenture",
         "period": "Jun 2026 - Presente",
-        "description": "Desenvolvimento e manutenção de aplicações backend em Python (FastAPI, Django REST) e interfaces frontend em Angular para clientes corporativos. Projeto de APIs REST e integrações SOAP entre sistemas corporativos, modernização de sistemas legados e atuação em integrações com IA/LLMs e automação de fluxos em time ágil e multidisciplinar."
+        "description": "Atuação para uma grande indústria alimentícia brasileira (sob NDA). Construí um serviço de triagem em Python no GCP Cloud Functions que classifica mais de 2 mil chamados por dia com LLM e roteia cada um para o pipe certo do Pipefy, e um pipeline orientado a eventos com Pub/Sub que classifica e faz OCR de mais de 64 mil notas fiscais por mês, com fallback de OCR em Python. Escrevi motores de regras para SLA, notificações por e-mail e regras por fase do workflow; CI/CD no Azure Pipelines."
       },
       "job2": {
-        "role": "Engenheiro de Software (Big Data & Backend)",
+        "role": "Engenheiro Full Stack",
         "company": "Figueiredo & Velloso Advogados",
         "period": "Mai 2025 - Jun 2026",
         "description": "Engenharia de pipeline massivo de scraping e ETL para 96 tribunais brasileiros, ingerindo 300M+ registros. Compressão de 97% no armazenamento (7TB para 180GB) com ClickHouse em bare metal. Construção de sistema RAG com Django e Vector Search para processar documentos jurídicos (5k+ páginas por arquivo)."
       },
       "job3": {
-        "role": "Engenheiro de Software (Backend & Integrações)",
+        "role": "Engenheiro Full Stack",
         "company": "CJR (Consultoria em Tecnologia)",
-        "period": "Jan 2024 - Dez 2025",
+        "period": "Jun 2024 - Dez 2025",
         "description": "Desenvolvimento de web scrapers para dados bancários americanos com Python, sistema de Registro de Ponto baseado em geolocalização usando Next.js e Nest.js, e backend de sistema de Avaliação de Professores. Também atuei como Diretor de Negócios gerenciando o ciclo de software para 20+ clientes."
       },
       "job4": {
-        "role": "Engenheiro de Software (IA & EdTech)",
+        "role": "Engenheiro Full Stack",
         "company": "Natural Language Institute",
         "period": "Dez 2023 - Set 2024",
         "description": "Engenharia do 'Natural Fluency', um tutor de idiomas com IA com navegação web em tempo real e geração dinâmica de aulas. Otimização de monolito Django/PostgreSQL para exportações de dados em larga escala e liderança na integração de 12+ novos idiomas na plataforma."
       },
       "job5": {
-        "role": "Estagiário de TI (Automação & Suporte)",
+        "role": "Estagiário de TI",
         "company": "SERPRO (Serviço Federal de Processamento de Dados)",
         "period": "Abr 2021 - Jul 2022",
         "description": "Desenvolvimento de scripts Python e Shell para automatizar manutenção rotineira de servidores (backups, provisionamento), economizando 6 horas/semana da equipe. Suporte técnico para infraestrutura de hardware e software de sistemas governamentais."

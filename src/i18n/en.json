@@ -14,8 +14,8 @@
     "loading": "Loading..."
   },
   "home": {
-    "role": "Senior FullStack Engineer",
-    "bio": "Senior FullStack Software Engineer passionate about building scalable distributed systems and high-performance APIs.",
+    "role": "Full Stack Engineer",
+    "bio": "Full Stack Software Engineer passionate about building scalable distributed systems and high-performance APIs.",
     "location": "Brasilia, Brazil",
     "weather": "Scattered Clouds",
     "newsletter": {
@@ -72,35 +72,35 @@
   },
   "about": {
     "title": "About Me",
-    "bio": "I'm Wilson Sousa, a Senior FullStack Software Engineer based in Brasilia, Brazil. I specialize in engineering high-concurrency distributed systems and scalable microservices, focused in Python (FastAPI, Django) and Hybrid Cloud Architectures.\n\nI have a proven track record of optimizing system performance from reducing storage infrastructure costs by 97% through compression, to deploying production-grade API ecosystems. I'm experienced with database tuning (PostgreSQL, ClickHouse), asynchronous programming, and building RAG systems with LLM integration.\n\nCurrently pursuing a B.Sc. in Computer Engineering at Universidade de Brasilia (UnB). When I'm not writing code, I'm exploring new technologies, contributing to open source, and sharing what I learn through my blog.",
+    "bio": "I'm Wilson Sousa, a Full Stack Software Engineer with 4+ years of experience, based in Brasilia, Brazil. I specialize in engineering high-concurrency distributed systems and scalable microservices, focused in Python (FastAPI, Django) and Hybrid Cloud Architectures.\n\nI have a proven track record of optimizing system performance from reducing storage infrastructure costs by 97% through compression, to deploying production-grade API ecosystems. I'm experienced with database tuning (PostgreSQL, ClickHouse), asynchronous programming, and building RAG systems with LLM integration.\n\nCurrently pursuing a B.Sc. in Computer Engineering at Universidade de Brasilia (UnB). When I'm not writing code, I'm exploring new technologies, contributing to open source, and sharing what I learn through my blog.",
     "experience": "Experience",
     "timeline": {
       "job1": {
-        "role": "Senior FullStack Engineer",
+        "role": "Software Engineer",
         "company": "Accenture",
         "period": "Jun 2026 - Present",
-        "description": "Building and maintaining Python backend applications (FastAPI, Django REST) and Angular frontends for enterprise clients. Designing REST APIs and SOAP integrations across corporate systems, modernizing legacy platforms, and driving AI/LLM integrations and workflow automation within an agile, multidisciplinary team."
+        "description": "Client work for a large Brazilian food manufacturer (under NDA). Built a Python triage service on GCP Cloud Functions that classifies 2,000+ support tickets a day with an LLM and routes each one into the right Pipefy pipe, and an event-driven Pub/Sub pipeline that classifies and OCRs 64,000+ fiscal invoices a month with a Python OCR fallback. Wrote rules engines for SLAs, email notifications and per-phase workflow rules; CI/CD on Azure Pipelines."
       },
       "job2": {
-        "role": "Software Engineer (Big Data & Backend)",
+        "role": "Full Stack Engineer",
         "company": "Figueiredo & Velloso Advogados",
         "period": "May 2025 - Jun 2026",
         "description": "Engineered a massive-scale scraping and ETL pipeline for 96 Brazilian tribunals, ingesting 300M+ records. Achieved 97% storage compression (7TB to 180GB) with ClickHouse on bare metal. Built a RAG system with Django and Vector Search to process legal documents (5k+ pages per file)."
       },
       "job3": {
-        "role": "Software Engineer (Backend & Integrations)",
+        "role": "Full Stack Engineer",
         "company": "CJR (Tech Consultancy)",
-        "period": "Jan 2024 - Dec 2025",
+        "period": "Jun 2024 - Dec 2025",
         "description": "Developed web scrapers for US Bank Data with Python, a geolocation-based Point Recording System using Next.js and Nest.js, and a University Teacher Evaluation backend. Also operated as Business Director managing the software lifecycle for 20+ clients."
       },
       "job4": {
-        "role": "Software Engineer (AI & EdTech)",
+        "role": "Full Stack Engineer",
         "company": "Natural Language Institute",
         "period": "Dec 2023 - Sept 2024",
         "description": "Engineered 'Natural Fluency,' an AI language tutor with real-time web browsing and dynamic lesson generation. Optimized a Django/PostgreSQL monolith for large-scale data exports and spearheaded integration of 12+ new languages into the platform."
       },
       "job5": {
-        "role": "IT Intern (Automation & Support)",
+        "role": "IT Intern",
         "company": "SERPRO (Federal Data Processing Service)",
         "period": "Apr 2021 - Jul 2022",
         "description": "Developed Python and Shell scripts to automate routine server maintenance (backups, provisioning), saving the team 6 hours/week. Provided technical support for hardware and software infrastructure for government systems."
