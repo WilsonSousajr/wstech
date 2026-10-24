@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Clipboard, Check, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Card from '../components/ui/Card';
+import Seo from '../components/Seo';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const COOLDOWN_SECONDS = 60;
@@ -105,6 +106,7 @@ export default function Contact() {
 
   return (
     <div className="pt-2 sm:pt-8">
+      <Seo page="contact" path="/contact" />
       <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{t('contact.title')}</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card>

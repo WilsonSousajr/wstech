@@ -4,10 +4,12 @@ import InfoCard from '../components/home/InfoCard';
 import NavCard from '../components/home/NavCard';
 import NewsletterCard from '../components/home/NewsletterCard';
 import GitHubHeatmap from '../components/home/GitHubHeatmap';
+import Seo from '../components/Seo';
 
 export default function Home() {
   return (
     <div className="bento-grid grid gap-3 sm:gap-4">
+      <Seo page="home" path="/" />
       <div style={{ gridArea: 'profile' }} className="min-w-0 animate-fade-up">
         <ProfileCard />
       </div>

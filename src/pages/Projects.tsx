@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { ExternalLink } from 'lucide-react';
 import Card from '../components/ui/Card';
 import { projects } from '../data/projects';
+import Seo from '../components/Seo';
 
 export default function Projects() {
   const { t, i18n } = useTranslation();
@@ -9,6 +10,7 @@ export default function Projects() {
 
   return (
     <div className="pt-2 sm:pt-8">
+      <Seo page="projects" path="/projects" />
       <div className="mb-6 sm:mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold">{t('projects.title')}</h1>
         <p className="mt-2 text-text-muted">{t('projects.subtitle')}</p>

@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Card from '../components/ui/Card';
+import Seo from '../components/Seo';
 
 export default function NotFound() {
   const { t } = useTranslation();
 
   return (
     <div className="pt-2 sm:pt-8 flex items-center justify-center min-h-[60vh]">
+      <Seo page="notFound" />
       <Card>
         <div className="text-center py-8 px-4">
           <p className="text-6xl font-light text-text-muted mb-4">404</p>
