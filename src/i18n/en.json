@@ -132,5 +132,34 @@
     "title": "Page not found",
     "description": "The page you're looking for doesn't exist or has been moved.",
     "backHome": "Back to Home"
+  },
+  "consent": {
+    "label": "Cookie consent",
+    "message": "I use Google Analytics to see which pages people read. It only loads if you say yes.",
+    "privacy": "Privacy",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "seo": {
+    "home": {
+      "title": "Wilson Sousa · Full Stack Engineer",
+      "description": "Wilson Sousa, Full Stack Engineer in Brasília. Distributed systems, high-performance APIs, Python, data pipelines and LLM integrations."
+    },
+    "projects": {
+      "title": "Projects · Wilson Sousa",
+      "description": "Selected projects by Wilson Sousa: products, tools and experiments in Python, TypeScript and the cloud."
+    },
+    "about": {
+      "title": "About · Wilson Sousa",
+      "description": "Experience and background of Wilson Sousa, Full Stack Engineer: ETL at scale, RAG systems, cloud functions and APIs."
+    },
+    "contact": {
+      "title": "Contact · Wilson Sousa",
+      "description": "Get in touch with Wilson Sousa for engineering work, collaborations or a chat."
+    },
+    "notFound": {
+      "title": "Page not found · Wilson Sousa",
+      "description": "This page does not exist."
+    }
   }
 }

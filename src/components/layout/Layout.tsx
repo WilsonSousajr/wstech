@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import Glass from '../glass/Glass';
+import ConsentBanner from './ConsentBanner';
 
 export default function Layout() {
   const { t, i18n } = useTranslation();
@@ -53,6 +54,8 @@ export default function Layout() {
           </Glass>
         </div>
       )}
+
+      <ConsentBanner />
 
       {/* Bottom padding on phones keeps the last card clear of the floating controls */}
       <main className="mx-auto max-w-6xl px-3 pt-6 pb-[calc(6rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-12">

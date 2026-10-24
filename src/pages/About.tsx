@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import Card from '../components/ui/Card';
+import Seo from '../components/Seo';
 
 const timelineKeys = ['job1', 'job2', 'job3', 'job4', 'job5'] as const;
 
@@ -8,6 +9,7 @@ export default function About() {
 
   return (
     <div className="pt-2 sm:pt-8">
+      <Seo page="about" path="/about" />
       <h1 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{t('about.title')}</h1>
       <div className="grid gap-4">
         <Card>
