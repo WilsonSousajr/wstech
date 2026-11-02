@@ -11,7 +11,8 @@
     "themeToDark": "Mudar para tema escuro"
   },
   "common": {
-    "loading": "Carregando..."
+    "loading": "Carregando...",
+    "linkedinProfile": "Ver perfil no LinkedIn"
   },
   "home": {
     "role": "Engenheiro Full Stack",
@@ -126,7 +127,8 @@
         "required": "Este campo é obrigatório",
         "email": "Por favor, insira um email válido"
       }
-    }
+    },
+    "linkedin": "Conectar no LinkedIn"
   },
   "notFound": {
     "title": "Página não encontrada",

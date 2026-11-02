@@ -11,7 +11,8 @@
     "themeToDark": "Switch to dark theme"
   },
   "common": {
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "linkedinProfile": "View LinkedIn profile"
   },
   "home": {
     "role": "Full Stack Engineer",
@@ -126,7 +127,8 @@
         "required": "This field is required",
         "email": "Please enter a valid email"
       }
-    }
+    },
+    "linkedin": "Connect on LinkedIn"
   },
   "notFound": {
     "title": "Page not found",

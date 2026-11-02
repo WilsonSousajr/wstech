@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { Linkedin } from 'lucide-react';
 import Card from '../ui/Card';
+import { LINKEDIN_URL } from '../../data/social';
 
 const techStack = [
   'Python', 'FastAPI', 'Django', 'PostgreSQL', 'ClickHouse',
@@ -22,7 +24,19 @@ export default function ProfileCard() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary">
           Wilson Sousa
         </h1>
-        <p className="mt-1 text-sm text-text-muted">@WilsonSousajr</p>
+        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+          <p className="text-sm text-text-muted">@WilsonSousajr</p>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-text-primary transition-colors"
+            aria-label={t('common.linkedinProfile')}
+          >
+            <Linkedin size={14} aria-hidden="true" />
+            <span>LinkedIn</span>
+          </a>
+        </div>
 
         {/* Bio */}
         <p className="mt-3 sm:mt-4 text-sm leading-relaxed text-text-secondary">

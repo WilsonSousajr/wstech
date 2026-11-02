@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Clipboard, Check, Loader2 } from 'lucide-react';
+import { Clipboard, Check, Loader2, Linkedin, ArrowUpRight } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Card from '../components/ui/Card';
+import { LINKEDIN_URL } from '../data/social';
 import Seo from '../components/Seo';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -130,6 +131,16 @@ export default function Contact() {
               )}
             </button>
           </div>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 flex items-center gap-2 sm:gap-3 rounded-full border border-border-hover bg-input px-3 sm:px-4 py-3 text-xs sm:text-sm text-text-secondary hover:text-text-primary transition-colors"
+          >
+            <Linkedin size={16} aria-hidden="true" />
+            <span className="flex-1 min-w-0 truncate">{t('contact.linkedin')}</span>
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
         </Card>
         <Card>
           <h2 className="mb-4 text-lg font-semibold">{t('contact.form.title')}</h2>
