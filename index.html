@@ -47,7 +47,24 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Crawlable links in the raw HTML: crawlers that don't run JS (and Google's
+         first, pre-render pass) would otherwise see an empty page with no path to
+         the blog. createRoot replaces this the moment the app mounts, where the
+         same links are rendered as the visible cards. -->
+    <div id="root">
+      <div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">
+        <h1>Wilson Sousa · Full Stack Engineer</h1>
+        <p>Full Stack Software Engineer in Brasília building scalable distributed systems and high-performance APIs.</p>
+        <nav>
+          <a href="https://blog.wstech.tech/">Blog: engineering articles by Wilson Sousa</a>
+          <a href="/projects">Projects</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/WilsonSousajr">GitHub</a>
+          <a href="https://www.linkedin.com/in/wilsonsousajr">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
