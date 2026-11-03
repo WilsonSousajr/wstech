@@ -31,11 +31,10 @@ const LEGEND_VARS = [
 ];
 
 export default function GitHubHeatmap() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [contributions, setContributions] = useState<ContributionDay[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const year = new Date().getFullYear();
 
   useEffect(() => {
     async function fetchContributions() {
@@ -99,7 +98,7 @@ export default function GitHubHeatmap() {
         <div className="flex items-center gap-2">
           <Github size={16} className="text-text-secondary" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-text-muted">
-            {t('home.github')} • {year}
+            {t('home.github')} • {t('home.githubPeriod')}
           </span>
         </div>
         <a
@@ -153,7 +152,7 @@ export default function GitHubHeatmap() {
         {/* Footer */}
         <div className="mt-4 flex items-center justify-between">
           <span className="text-xs text-text-muted">
-            {total} {t('home.activitiesIn')} {year}
+            {t('home.activitiesLast12', { total: total.toLocaleString(i18n.language) })}
           </span>
           <div className="flex items-center gap-1.5">
             <span className="text-[10px] text-text-faint">{t('home.heatmap.less')}</span>

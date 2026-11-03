@@ -30,7 +30,8 @@
     },
     "github": "Atividade no GitHub",
     "githubProfile": "Ver perfil no GitHub",
-    "activitiesIn": "atividades em",
+    "githubPeriod": "Últimos 12 meses",
+    "activitiesLast12": "{{total}} atividades nos últimos 12 meses",
     "heatmap": {
       "less": "Menos",
       "more": "Mais",
