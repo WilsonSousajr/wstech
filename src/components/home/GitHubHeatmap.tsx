@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Github, ExternalLink } from 'lucide-react';
 import Card from '../ui/Card';
@@ -76,10 +76,20 @@ export default function GitHubHeatmap() {
     fetchContributions();
   }, []);
 
-  // Group contributions into weeks (columns of 7 days)
-  const weeks: ContributionDay[][] = [];
-  for (let i = 0; i < contributions.length; i += 7) {
-    weeks.push(contributions.slice(i, i + 7));
+  // Group contributions into weeks (columns of 7 days, Sunday first) so each
+  // row is always the same weekday — pad the first week with empty slots.
+  const weeks: (ContributionDay | null)[][] = [];
+  if (contributions.length > 0) {
+    const offset = new Date(`${contributions[0].date}T00:00:00`).getDay();
+    const days: (ContributionDay | null)[] = [
+      ...Array.from({ length: offset }, () => null),
+      ...contributions,
+    ];
+    for (let i = 0; i < days.length; i += 7) {
+      const week = days.slice(i, i + 7);
+      while (week.length < 7) week.push(null);
+      weeks.push(week);
+    }
   }
 
   return (
@@ -103,54 +113,59 @@ export default function GitHubHeatmap() {
         </a>
       </div>
 
-      {/* Heatmap */}
-      <div className="mt-4 flex-1 heatmap-scroll">
-        {loading ? (
-          <div className="flex h-24 items-center justify-center">
-            <span className="text-xs text-text-faint">{t('common.loading')}</span>
-          </div>
-        ) : (
-          <div className="flex gap-[3px]">
-            {weeks.map((week, wi) => (
-              <div key={wi} className="flex flex-col gap-[3px]">
-                {week.map((day, di) => (
-                  <div
-                    key={`${wi}-${di}`}
-                    className="h-[10px] w-[10px] rounded-full"
-                    style={{ backgroundColor: INTENSITY_VARS[day.level] }}
-                    title={`${day.date}: ${day.count} contributions`}
-                  />
-                ))}
-                {/* Pad incomplete weeks */}
-                {week.length < 7 &&
-                  Array.from({ length: 7 - week.length }).map((_, pi) => (
+      {/* Graph + legend share one dot size: a week column's share of the
+          container width (cqw), floored at 6px so phones scroll instead. */}
+      <div
+        className="@container mt-4 flex flex-1 flex-col [--dot-gap:2px] sm:[--dot-gap:3px] [--dot:max(6px,calc((100cqw-(var(--weeks)-1)*var(--dot-gap))/var(--weeks)))]"
+        style={{ '--weeks': weeks.length || 53 } as CSSProperties}
+      >
+        {/* Heatmap */}
+        <div className="flex-1 heatmap-scroll">
+          {loading ? (
+            <div className="flex h-24 items-center justify-center">
+              <span className="text-xs text-text-faint">{t('common.loading')}</span>
+            </div>
+          ) : (
+            // Fluid grid: one column per week, dots scale with the card width.
+            // The 6px floor keeps them legible on phones, where it scrolls instead.
+            <div className="grid grid-flow-col grid-rows-7 gap-(--dot-gap) grid-cols-[repeat(var(--weeks),var(--dot))]">
+              {weeks.flatMap((week, wi) =>
+                week.map((day, di) =>
+                  day ? (
                     <div
-                      key={`pad-${wi}-${pi}`}
-                      className="h-[10px] w-[10px] rounded-full"
-                      style={{ backgroundColor: INTENSITY_VARS[0] }}
+                      key={`${wi}-${di}`}
+                      className="aspect-square w-full rounded-full"
+                      style={{ backgroundColor: INTENSITY_VARS[day.level] }}
+                      title={t('home.heatmap.dayTitle', {
+                        date: day.date,
+                        count: day.count,
+                      })}
                     />
-                  ))}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+                  ) : (
+                    <div key={`${wi}-${di}`} className="aspect-square w-full" aria-hidden="true" />
+                  )
+                )
+              )}
+            </div>
+          )}
+        </div>
 
-      {/* Footer */}
-      <div className="mt-4 flex items-center justify-between">
-        <span className="text-xs text-text-muted">
-          {total} {t('home.activitiesIn')} {year}
-        </span>
-        <div className="flex items-center gap-1.5">
-          <span className="text-[10px] text-text-faint">{t('home.heatmap.less')}</span>
-          {LEGEND_VARS.map((color, i) => (
-            <div
-              key={i}
-              className="h-[10px] w-[10px] rounded-full"
-              style={{ backgroundColor: color }}
-            />
-          ))}
-          <span className="text-[10px] text-text-faint">{t('home.heatmap.more')}</span>
+        {/* Footer */}
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-xs text-text-muted">
+            {total} {t('home.activitiesIn')} {year}
+          </span>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[10px] text-text-faint">{t('home.heatmap.less')}</span>
+            {LEGEND_VARS.map((color, i) => (
+              <div
+                key={i}
+                className="size-(--dot) shrink-0 rounded-full"
+                style={{ backgroundColor: color }}
+              />
+            ))}
+            <span className="text-[10px] text-text-faint">{t('home.heatmap.more')}</span>
+          </div>
         </div>
       </div>
     </Card>

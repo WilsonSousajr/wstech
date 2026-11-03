@@ -33,7 +33,8 @@
     "activitiesIn": "activities in",
     "heatmap": {
       "less": "Less",
-      "more": "More"
+      "more": "More",
+      "dayTitle": "{{date}}: {{count}} contributions"
     },
     "forecast": {
       "sat": "SAT",
